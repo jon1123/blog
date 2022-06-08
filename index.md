@@ -5,4 +5,4 @@ You will find a verity of stiles of my notes in trying to find what works best f
 
 Thank you for joining me on this never ending journey in my studding.
 
-[/THM_Blue.md]
+[https://jon1123.github.io/blog/THM_Blue.md]
