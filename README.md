@@ -1,20 +1,8 @@
 # blog
 
-## Some Markdown notes 
+Hello welcome to my study blog
 
-# Header 1
-## Header 2
-### Header 3
+This is a collation of my note from some CTF's and other study resources I have been using for the past year or so. You will find a verity of stiles of my notes in trying to find what works best for me to reference later and different tools I am work with.
 
-- Bulleted
-- List
+Thank you for joining me on this never ending journey in my studding.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
