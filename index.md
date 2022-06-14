@@ -6,4 +6,3 @@ You will find a verity of stiles of my notes in trying to find what works best f
 Thank you for joining me on this never ending journey in my studding.
 
 <img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
-<script src="https://tryhackme.com/badge/30729"></script>
