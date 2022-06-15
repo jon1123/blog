@@ -1,3 +1,8 @@
+---
+layout: post
+title: THM Common Linux Privesc
+---
+
 https://tryhackme.com/room/commonlinuxprivesc
 
 Common Linux Privesc
