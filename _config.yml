@@ -23,7 +23,7 @@ footer-links:
   github: jon1123/blog/
   linkedin: /jonmkuhl/
   tryhackme: https://tryhackme.com/p/Jon112358 # channel/<your_long_string> or user/<user-name>
-  <img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
+  tryhackme_status: <img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
   hackthebox: # anything in your profile username that comes after plus.google.com/
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
