@@ -1,8 +1,19 @@
-# Hello welcome to my study blog
+---
+layout: default
+---
 
-This is a collation of my note from some CTF's and other study resources I have been using for the past year or so.
-You will find a verity of stiles of my notes in trying to find what works best for me to reference later and different tools I am work with.
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
 
-Thank you for joining me on this never ending journey in my studding.
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-<img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+
