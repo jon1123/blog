@@ -1,10 +1,8 @@
-------------------------
 
-layout: page
-title: "Blue"
-permalink: /_post/THM_Blue
-
-------------------------
+---
+layout: post
+title: THM Blue
+---
 
 https://tryhackme.com/room/blue
 
