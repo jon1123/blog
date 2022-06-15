@@ -23,9 +23,10 @@ Thank you for joining me on this never ending journey in my studding.
 # Includes an icon in the footer for each username you enter
 footer-links:
   email: jonmkuhl@gmail.com
-  github: jon1123/my-jakyll
+  github: jon1123/blog
   linkedin: https://www.linkedin.com/in/jonmkuhl/
   tryhackme: https://tryhackme.com/p/Jon112358 # channel/<your_long_string> or user/<user-name>
+  <img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
   hackthebox: # anything in your profile username that comes after plus.google.com/
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
