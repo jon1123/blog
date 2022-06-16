@@ -15,7 +15,7 @@ description: This is a collation of my note from some CTF’s and other study re
 #
 # Flags below are optional
 #
-theme: jekyll-theme-hacker
+
 # Includes an icon in the footer for each username you enter
 footer-links:
   email: jonmkuhl@gmail.com
@@ -53,6 +53,7 @@ kramdown:
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
     css_class: 'highlight'
+theme: jekyll-theme-hacker
 
 # Set the Sass partials directory, as we're using @imports
 sass:
