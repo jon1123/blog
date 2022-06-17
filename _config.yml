@@ -56,8 +56,8 @@ kramdown:
 # Trying to set a theme
 theme: jekyll-theme-hacker
 remote_theme: pages-themes/hacker@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one 
+plugins: 
+  - jekyll-remote-theme # add this line to the plugins list if you already have one 
 
 # Set the Sass partials directory, as we're using @imports
 sass:
