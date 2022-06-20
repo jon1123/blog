@@ -3,7 +3,6 @@
 #
 
 # Name of your site (displayed in the header)
-#title: Study Blog
 name: Study Blog
 
 # Short bio or description (displayed in the header)
@@ -55,12 +54,6 @@ kramdown:
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
     css_class: 'highlight'
-
-## Trying to set a theme
-#theme: jekyll-theme-hacker
-#remote_theme: pages-themes/hacker@v0.2.0
-#plugins: 
-#  - jekyll-remote-theme # add this line to the plugins list if you already have one 
 
 # Set the Sass partials directory, as we're using @imports
 sass:
