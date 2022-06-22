@@ -1,7 +1,9 @@
+---
 layout: post
 title: THM John The Ripper
-permalink: /blog/THM_JohnTheRipper
-
+date: 2021-12-05
+permalink: /:blog/:THM_JohnTheRipper
+---
 
 
 [THM John the ripper](https://tryhackme.com/room/johntheripper0)
