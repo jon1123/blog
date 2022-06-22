@@ -1,8 +1,7 @@
 ---
 layout: post
 title: THM John The Ripper
-date: 2021-12-05
-permalink: /:blog/:THM_JohnTheRipper
+permalink: /blog/THM_JohnTheRipper
 ---
 
 
