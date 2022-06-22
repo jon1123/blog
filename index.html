@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<h1>Hello welcome to my study blog</h1>
+
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
@@ -11,8 +13,10 @@ layout: default
       <div class="entry">
         {{ post.excerpt }}
       </div>
-
+     
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
 </div>
+
+<img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
