@@ -3,7 +3,7 @@ layout: post
 title: THM Hashing Crypto 101
 ---
 
-https://tryhackme.com/room/hashingcrypto101
+[tryhackme Crypto101](https://tryhackme.com/room/hashingcrypto101)
 
 Hashing - Crypto 101
 
