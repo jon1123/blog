@@ -5,7 +5,7 @@ permalink: /blog/THM_JohnTheRipper
 ---
 
 
-[THM John the ripper](https://tryhackme.com/room/johntheripper0)
+[THM John The Ripper](https://tryhackme.com/room/johntheripper0)
 
 
 1092
