@@ -39,37 +39,38 @@ baseurl: "/blog"
 # !! You don't need to change any of the configuration flags below !!
 #
 
-permalink: /:title/
+# permalink: /:title/
 
 # The release of Jekyll Now that you're using
-version: v1.2.0
+# version: v1.2.0
 
 
 # Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+# kramdown:
+#  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+#  input: GFM
+#  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+#  syntax_highlighter: rouge
+#  syntax_highlighter_opts:
+#    # Use existing pygments syntax highlighting css
+#    css_class: 'highlight'
 
 # Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
+#sass:
+#  style: :expanded # You might prefer to minify using :compressed
 # themes
-remote_theme: pages-themes/hacker@v0.2.0
+theme: jekyll-themem-hacker
+# remote_theme: pages-themes/hacker@v0.2.0
 # Use the following plug-ins
-plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-  - jekyll-remote-theme # add this line to the plugins list if you already have one
+# plugins:
+#  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+#  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+#  - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 # Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+# exclude:
+#  - Gemfile
+#  - Gemfile.lock
+#  - LICENSE
+#  - README.md
+#  - CNAME
