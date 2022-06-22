@@ -3,7 +3,7 @@ layout: post
 title: THM Content Discovery
 ---
 
-https://tryhackme.com/room/contentdiscovery
+[tryhackme room Content Discovery](https://tryhackme.com/room/contentdiscovery)
 
 Content Discovery
 
