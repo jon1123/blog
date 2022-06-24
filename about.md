@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-<span style="color:dark_green;font-weight:700;font-size:20px">
+<span style="color:green;font-weight:700;font-size:20px">
     
 ## Study Blog
 
