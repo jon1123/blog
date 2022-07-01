@@ -17,3 +17,7 @@ defaults:
     path: ""
     values:
       layout: "default"
+
+show_downloads: true
+
+theme: jekyll-theme-hacker
