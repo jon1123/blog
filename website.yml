@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Websites
+title: website
 ---
-<h1>Websites</h1>
+<h1>Website</h1>
 
 <ul>
 	{% for from in site.from %}
