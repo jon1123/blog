@@ -1,4 +1,4 @@
-# blog
+# Study blog
 
 Hello welcome to my study blog
 
