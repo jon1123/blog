@@ -1,23 +1,30 @@
-collections:
-  from:
-    output: true
-
-defaults:
-  - scope:
-    path: ""
-    type: "websites"
-    values:
-      layout: "from"
-  - scope:
-    path: ""
-    type: "posts"
-    values:
-      layout: "post"
-  - scope:
-    path: ""
-    values:
-      layout: "default"
-
+title: Study Blog
+description: This is a colaction of CTF wrightups, study notes, and some old code.
 show_downloads: true
-
+google_analytics:
 theme: jekyll-theme-hacker
+url: http://jon112358.com
+baseurl: "/blog"
+permalink: /:title/
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+# Use the following plug-ins
+plugins:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
