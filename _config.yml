@@ -28,3 +28,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+footer-links:
+  email: jonmkuhl@gmail.com
+  github: jon1123/my-jakyll
+  linkedin: https://www.linkedin.com/in/jonmkuhl/
