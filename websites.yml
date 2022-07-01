@@ -1,0 +1,15 @@
+---
+layout: default
+title: Websites
+---
+<h1>Websites</h1>
+
+<ul>
+	{% for from in site.from %}
+	<li>
+		<h2><a href="{{ from.url }}">{{ from.name }}</a></h2>
+		<h3>{{ from.sourse }}</h3>
+		<p>{{ from.content | markdownify }}</p>
+	</li>
+	{% endfor %}
+</ul>
