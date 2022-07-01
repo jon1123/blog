@@ -1,6 +1,6 @@
 title: Study Blog
 description: This is a colaction of CTF wrightups, study notes, and some old code.
-show_downloads: true
+show_downloads: fales
 google_analytics:
 theme: jekyll-theme-hacker
 url: http://jon112358.com
