@@ -1,7 +1,51 @@
-baseURL = 'http://jon112358.com/'
+baseURL = 'https://jon112358.com/'
 languageCode = 'en-us'
 title = 'jon112358 study Blog'
 theme = "hugo-blog-awesome"
+
+# set markup.highlight.noClasses=false to enable code highlight
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+  [[menu.main]]
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 30
+
+[params]
+  sitename = "Jon K study blog"
+  defaultColor = "dark" # set color mode: dark, light, auto
+  # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
+  # the default value is set to 'auto'.
+  # You can take a look at layouts/index.html for more information.
+  description = "this is a study blog where you will find what I have been up to"
+  mainSections = ['posts']
+  toc = true # set to false to disable table of contents 'globally'
+  goToTop = true # set to false to disable 'go to top' button
+
+[params.author]
+  avatar = "avitar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "My study blog"
+  name = "Jon K"
+  description = "A quick look at what I have been up to."
 
 [[params.socialIcons]]
 name = "github"
@@ -11,5 +55,3 @@ url = "https://github.com/jon1123"
 name = "LinkedIn"
 url = "https://www.linkedin.com/in/jonmkuhl/"
 
-[params]
-goToTop = true

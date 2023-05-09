@@ -1,7 +1,7 @@
 ---
-title: "Who Am I"
-date: 2023-05-09T12:38:36-07:00
-draft: False
+title: About
+description: 'This is my study blog'
+date: 2023-05-09T13:55:50-07:00
 ---
 
 ### This is my study blog 
