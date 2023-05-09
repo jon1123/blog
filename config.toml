@@ -55,3 +55,7 @@ url = "https://github.com/jon1123"
 name = "LinkedIn"
 url = "https://www.linkedin.com/in/jonmkuhl/"
 
+[tableOfContents]
+startLevel = 2 # ToC starts from H2
+endLevel = 4 # ToC ends at H4
+ordered = false # generates <ul> instead of <ol>
