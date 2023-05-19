@@ -15,6 +15,8 @@ As you may notices if you notices such things I am dyslexic and may miss some mi
 
 Thank you.
 
+ <img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
+ 
 # My Resume 
 
 ## *Jon Kuhl*

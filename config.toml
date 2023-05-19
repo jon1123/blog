@@ -55,6 +55,14 @@ url = "https://github.com/jon1123"
 name = "LinkedIn"
 url = "https://www.linkedin.com/in/jonmkuhl/"
 
+[[params.socialIcons]]
+name = "tryhackme"
+url = "https://tryhackme.com/p/Jon112358"
+
+[[params.socialIcons]]
+name = "HackTheBox"
+url = "https://app.hackthebox.com/profile/1068091"
+
 [tableOfContents]
 startLevel = 2 # ToC starts from H2
 endLevel = 4 # ToC ends at H4
