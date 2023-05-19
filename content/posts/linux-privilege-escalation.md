@@ -1,9 +1,9 @@
 ---
-title: "Linux Privilege Escalation"
+title: "THM Linux Privilege Escalation"
 date: 2023-05-09T16:20:43-07:00
 ---
 
-# Linux Privilege Escalation
+# THM Linux Privilege Escalation
 
 ## Task 1 Introduction
 

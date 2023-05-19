@@ -1,9 +1,9 @@
 ---
-title: "Wireshark 101"
+title: "THM Wireshark 101"
 date: 2023-05-09T16:18:11-07:00
 ---
 
-# Wireshark 101
+# THM Wireshark 101
 
 #### Task 1 Introduction
 
