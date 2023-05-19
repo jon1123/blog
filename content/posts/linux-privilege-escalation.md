@@ -1,7 +1,6 @@
 ---
 title: "Linux Privilege Escalation"
 date: 2023-05-09T16:20:43-07:00
-draft: true
 ---
 
 # Linux Privilege Escalation
