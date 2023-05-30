@@ -92,8 +92,9 @@ uplad file that has
  
 
  www-data@base:/var/www/html/_uploaded$ cat /var/www/html/login/config.php
+
 cat /var/www/html/login/config.php
-<?php
+
 $username = "admin";
 $password = "thisisagoodpassword";
 
