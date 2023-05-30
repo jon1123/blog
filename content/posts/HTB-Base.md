@@ -95,8 +95,8 @@ uplad file that has
 
 cat /var/www/html/login/config.php
 
-$username = "admin";
-$password = "thisisagoodpassword";
+username = "admin";
+password = "thisisagoodpassword";
 
 ls /home
 john
