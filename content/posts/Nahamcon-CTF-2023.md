@@ -6,7 +6,7 @@ draft: false
 
 ## Nahamcon CTF 2023
 
-![NahamconCTF2023](blog/static/NahamconCTF2023.png)
+![NahamconCTF2023](/NahamconCTF2023.png)
 
 ## Read the rules
 a link to the rules and found in view-scorce
