@@ -6,7 +6,7 @@ draft: false
 
 ## Nahamcon CTF 2023
 
-![[Pasted image 20230617122718.png]]
+![NahamconCTF2023](/static/NahamconCTF2023.png)
 
 ## Read the rules
 a link to the rules and found in view-scorce
