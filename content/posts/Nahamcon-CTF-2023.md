@@ -8,13 +8,14 @@ draft: false
 
 ![NahamconCTF2023](/NahamconCTF2023.png)
 
+
 ## Read the rules
 a link to the rules and found in view-scorce
 
 line 273
 flag{90bc54705794a62015369fd8e86e557b}
 
-  # Rules
+### Rules
 
 We don't want to have to enforce restrictions on you, but there are a few things we would like to politely ask you not to do:
 
@@ -340,3 +341,4 @@ I found some more random gibberish text. Why are there so many of these?! (Don't
 `@iH<,{|jbRH?L^VjGJH<vn3p7I,x~@1jyt>x?,!YAJr*08P`
 
 ## Thank you to all who put this event on and I look foreword to doing better next year
+ 
