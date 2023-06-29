@@ -67,7 +67,7 @@ jonmkuhl@gmail.com
 
 # Certification 
 
-![eJPT Certification](/eJPTCertification.pdf)
+![eJPT Certification](/eJPTCertification.png)
 [verification link](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb)
 
 

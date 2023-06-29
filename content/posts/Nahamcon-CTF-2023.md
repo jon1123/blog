@@ -6,6 +6,7 @@ draft: false
 
 ## Nahamcon CTF 2023
 
+I was the only one on my team. 
 ![NahamconCTF2023](/NahamconCTF2023.png)
 
 
