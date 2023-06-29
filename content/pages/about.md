@@ -24,13 +24,13 @@ jonmkuhl@gmail.com
 
 
 ### SUMMARY OF QUALIFICATIONS:
-    • Daily drive Linux for over 4 years and currently running Arch Linux with Kali and Parrot VMs and have used using Ubuntu, Debian, Mint, and Fedora 
+    • Daily drive Linux since 2018, I have used Arch, BlackArch, Kali, Parrot, RaspberryPiOS, Ubuntu, Debian, Mint, and Fedora 
     • Study and practice with Tryhackme.com and less often with HackTheBox, OverTheWire and PicoCTF
     • tools used for eJPT: nmap, fping, hydra, John the Ripper, BurpSuite, Metasploit
 
 ### WORK EXPERIENCE:
    #### Data Analyst Contractor for HP Printing(2020 Companies) Vancouver, WA 04/2019- 10/2022
-    • performed audits on tier 1 and 2 distributors websites looking for selected products and information to find ways to help improve only sales 
+    • Audited tier 1 and 2 distributors websites looking for selected products and information to find ways to help improve online-sales 
     • checked to confirm prices and data was compliant and sent correction when applicable
     • ran a webcrowlers during testing and made some edits to the VBA code   
     • audited the results of other bots  that where operational 
@@ -39,7 +39,7 @@ jonmkuhl@gmail.com
     • Operate the sorting system, presort test, start , stop and monitor during the sort
     • Log system flow rate, package per hour 
     • Maintain a log of current sort staff hours for real time estimate of work hours to complete the sort
-    • verify package handlers clock in and out for the sort and within reasonable time of when individuals were released for the sort
+    • Logged package handlers clock in and out for the sort and within reasonable time of when individuals were released for the sort
     • Worked as a package handler loading trucks for delivery
 
    #### IT Manager Lonestar Restaurant Supply Addison, TX 10/2015-06/2017
@@ -67,6 +67,7 @@ jonmkuhl@gmail.com
 
 # Certification 
 
-[eJPT Certification](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb)
+![eJPT Certification](/eJPTCertification.pdf)
+[verification link](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb)
 
 
