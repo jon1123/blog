@@ -29,7 +29,7 @@ jonmkuhl@gmail.com
     • tools used for eJPT: nmap, fping, hydra, John the Ripper, BurpSuite, Metasploit
 
 ### WORK EXPERIENCE:
-   #### Data Analyst Contractor for HP Printing(2020 Companies) Vancouver, WA 04/2019- 10/2022
+   #### Data Analyst/Web content Auditor Contractor for HP Printing(2020 Companies) Vancouver, WA 
     • Audited tier 1 and 2 distributors websites looking for selected products and information to find ways to help improve online-sales 
     • checked to confirm prices and data was compliant and sent correction when applicable
     • ran a webcrowlers during testing and made some edits to the VBA code   
@@ -42,7 +42,7 @@ jonmkuhl@gmail.com
     • Logged package handlers clock in and out for the sort and within reasonable time of when individuals were released for the sort
     • Worked as a package handler loading trucks for delivery
 
-   #### IT Manager Lonestar Restaurant Supply Addison, TX 10/2015-06/2017
+   #### IT Manager/Systems Administrator Lonestar Restaurant Supply Addison, TX 10/2015-06/2017
     • Maintained all systems for 5 location in two States 
     • Worked with Microsoft XP, Vista, 7, 8, 10, Server 2012, and MacOS X 
     • Worked on hardware issues as well as software
