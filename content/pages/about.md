@@ -28,7 +28,7 @@ jonmkuhl@gmail.com
     • Bachelor of Science, Mathematics - Applied Mathematics Option California State Polytechnic University, Pomona Pomona, California
     
 ### CERTIFICATIONS and TRAININGS:
-    • [eJPT](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb) Junior Penetration Tester (Cert ID: 8452393)
+    • eJPT - Junior Penetration Tester (Cert ID: [8452393](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb))
     • Hack The Box Academy: Bug Bounty Hunter, Operating System Fundamentals Paths completed
     • TryHackMe: CompTIA Pentest+, Complete Beginner, Pre Security Paths completed
     • Udemy: SQL, Python 3.x, Python for Data Science and Visualization, Linux Terminal
@@ -45,13 +45,13 @@ jonmkuhl@gmail.com
 ### PROFESSIONAL EXPERIENCE:
 ##### HP Printing (Contractor)
 ###### Data Analyst/Web Content Auditor
-April 2019 - October 2022
+    April 2019 - October 2022
     • Performed comprehensive audits for content accuracy for HP Ink and Toner from online distributors.
     • Utilized data to generate reports that enhanced quality and sales.
     • Assisted in running and auditing web-crawlers to ensure accurate data collection.
 ##### FedEx Ground
 ###### Operations Administrator II
-September 2017 - April 2019
+    September 2017 - April 2019
     • Monitored and operated the sorting system logging package flow rates and employee hours.
     • Created real-time productivity reports for all management levels optimizing operational efficiency.
 ##### Lonestar Restaurant Supply
