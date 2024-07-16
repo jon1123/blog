@@ -28,7 +28,7 @@ jonmkuhl@gmail.com
     • Bachelor of Science, Mathematics - Applied Mathematics Option California State Polytechnic University, Pomona Pomona, California
     
 ### CERTIFICATIONS and TRAININGS:
-    • ![eJPT](/eJPTCertification.png)
+    • [eJPT](/eJPTCertification.png)
 [verification link](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb) Junior Penetration Tester (Cert ID: 8452393)
     • Hack The Box Academy: Bug Bounty Hunter, Operating System Fundamentals Paths completed
     • TryHackMe: CompTIA Pentest+, Complete Beginner, Pre Security Paths completed
