@@ -63,6 +63,10 @@ url = "https://tryhackme.com/p/Jon112358"
 name = "HackTheBox"
 url = "https://app.hackthebox.com/profile/1068091"
 
+[[params.socialIcons]]
+name = "eJPT"
+url = "https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb"
+
 [tableOfContents]
 startLevel = 2 # ToC starts from H2
 endLevel = 4 # ToC ends at H4
