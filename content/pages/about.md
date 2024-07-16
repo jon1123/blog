@@ -28,8 +28,7 @@ jonmkuhl@gmail.com
     • Bachelor of Science, Mathematics - Applied Mathematics Option California State Polytechnic University, Pomona Pomona, California
     
 ### CERTIFICATIONS and TRAININGS:
-    • [eJPT](/eJPTCertification.png)
-[verification link](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb) Junior Penetration Tester (Cert ID: 8452393)
+    • [eJPT](https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb) Junior Penetration Tester (Cert ID: 8452393)
     • Hack The Box Academy: Bug Bounty Hunter, Operating System Fundamentals Paths completed
     • TryHackMe: CompTIA Pentest+, Complete Beginner, Pre Security Paths completed
     • Udemy: SQL, Python 3.x, Python for Data Science and Visualization, Linux Terminal
@@ -45,26 +44,26 @@ jonmkuhl@gmail.com
       
 ### PROFESSIONAL EXPERIENCE:
 ##### HP Printing (Contractor)
-Data Analyst/Web Content Auditor
+###### Data Analyst/Web Content Auditor
 April 2019 - October 2022
     • Performed comprehensive audits for content accuracy for HP Ink and Toner from online distributors.
     • Utilized data to generate reports that enhanced quality and sales.
     • Assisted in running and auditing web-crawlers to ensure accurate data collection.
 ##### FedEx Ground
-Operations Administrator II
+###### Operations Administrator II
 September 2017 - April 2019
     • Monitored and operated the sorting system logging package flow rates and employee hours.
     • Created real-time productivity reports for all management levels optimizing operational efficiency.
 ##### Lonestar Restaurant Supply
-IT Manager/System Administrator
-October 2015 - June 2017
+###### IT Manager/System Administrator
+    October 2015 - June 2017
     • Replaced managed service provider saving ~$5000 per month for the company’s five locations.
     • Managed and troubleshot hardware and software across various operating systems.
     • Collaborated with external contractors to upgrade hardware and software including a migration to Rackspace with Active Directory implementation.
 
 ### ADDITIONAL EXPERIENCE:
 ##### Family Caregiver
-October 2022 - Present
+    October 2022 - Present
     • Adjusted professional commitments to provide necessary care for a family member transitioning from full-time to part-time caregiving as their condition stabilized.
     • Managed household responsibilities, coordinated transportation for medical appointments, and provided ongoing emotional support.
     • Utilized this period to further my education in Cybersecurity through platforms like HackTheBox Academy and TryHackMe, staying current with industry trends and enhancing my technical skills.
