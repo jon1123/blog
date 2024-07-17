@@ -1,7 +1,7 @@
 ---
 title: "Jerry HTB"
 date: 2024-07-16T16:38:48-07:00
-draft: true
+draft: false
 ---
 
 This is a test post I want to explore how some things translate fom my Obsidian volt with minamal edits. 
