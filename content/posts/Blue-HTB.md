@@ -114,6 +114,6 @@ Mode              Size  Type  Last modified              Name
 
 ```
 
-That is the box. I would like to try to run the run and understand the script without using Metasploit.
+That is the box. I would like to try to come back to this box without using Metasploit to better understand what the script is doing.
 
 
