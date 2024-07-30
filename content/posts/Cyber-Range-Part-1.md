@@ -21,7 +21,7 @@ I am not going to go into details on how to install and configure ProxMox, The o
 For the latest [ISO](https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso). Use a tool like Etcher or Rufus or Disk Imager to create a bootable USB. Then install.
 I am running 7.3-3, on my old desktop see the stats bellow. 
 
-![[/Proxmox-system-info.png]]
+![Proxmox-system-info.png](/Proxmox-system-info.png)
 note: I may want to reduce my SWAP or use a larger boot drive when I rebuild some day. This is also the drive that by default will host my uploaded ISO's and LXC's.
 I have 1T of additional hard drive space for my Cyber Range. 
 ## VM's
@@ -74,7 +74,7 @@ Name it "t-purple" set disk size to 64GiB and memory to 4096 since they will be 
 For installing most things are the same you can name it template, and for software unselect everything except the desktop environment.  
 The same changes to the system as before, but you don't need to change the network setting that will be done later. 
 Once updates are complete shutdown the server and convert to a template by right-clicking it and "convert to template".
-![[/Convert-to-template.png]]
+![Convert-to-template.png](/Convert-to-template.png)
 I did not think about numbering when I started my build. 
 Now we can clone form that template. 
 
@@ -104,7 +104,7 @@ location /nginx_status {
 		fastcgi_pass unix:/run/php/php8.2-fpm.sock;
 ```
 It will look something like this.
-![[/nginx-sites-enabled.png]]
+![nginx-sites-enabled.png](/nginx-sites-enabled.png)
 
 Then run ` sudo systemctl enable nginx --now`, running `--now` is equivalent as running `sudo systemctl start nginx`.
 Followed by `sudo systemctl enable php8.2-fpm --now`
@@ -118,7 +118,7 @@ sudo mysql -u root -e "grant all privilages on*.* to 'support'@'localhost' ident
 I miss type this one the first time and had to fix it double-check that the quotes are consistent on 'support' and 'localhost' and that your spelling is correct. It could take some time to chase down if error. 
 Then run `sudo hostnamectl set-hostname web01` to change the host name to "web01" then reboot.
 Now change host name in /etc/hosts to web01
-![[/web01-etc-hosts.png]]
+![web01-etc-hosts.png](/web01-etc-hosts.png)
 Now we will install Suricata on this server to reduces our total number of servers running. 
 
 ```sh
@@ -129,7 +129,7 @@ sudo vim /etc/suricata/suricata.yaml
 ```
 
 Change to your home net range, mine looks like this.
-![[/web01-suricata-netrange.png]]
+![web01-suricata-netrange.png](/web01-suricata-netrange.png)
 
 Now fetch our default rule sets with 
 ```sh
@@ -145,7 +145,7 @@ uid=0(root) gid=0(root) groups=0(root)
 sudo cat /var/log/suricata/fast.log
 ```
 mine looks like 
-![[/suricata-fast-log.png]]
+![suricata-fast-log.png](/suricata-fast-log.png)
 we now have a proxy server with IDS capability. 
 
 Now we will add a per-built website to our server. 
@@ -286,12 +286,12 @@ Select Standard Desktop. Accept the terms and do a custom install.
 Select the drive and click "next", it will install then load Customize settings. 
 You need to create a password that meets the windows requirements. 
 I will use "Jmk112358!" use the extra keys (the one that looks like an A keycap) to get Ctrl+Alt+Delete (the last one with three keys)
-![[/MWS2019-login.png]]
+![MWS2019-login.png](/MWS2019-login.png)
 
 "yes" to the networks pop  up. and close the Server manager pop up. 
 then adjust display by r-click on the desktop and select display, set it to "1280x768"
 Then change network settings by r-clik on network settings select "open internet ...", "Change our adapter", go to PIv4 properties. 
-![[/app02-networksettings.png]]
+![/app02-networksettings.png](/app02-networksettings.png)
 set the IP to 192.168.0.112 with 192.168.0.1 gateway and the 8.8.8.8 DNS and "ok" then close the windows. I like to open CMD and run 
 ```cmd
 ipconfig
@@ -300,7 +300,7 @@ to confirm change was made.
 We now need to install a Proxmox Windows VirtIO [Drivers](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers) Go down to the Installation section and I selected the latest stable. 
 Once downloaded, upload into proxmox ISO folder and then go to "app02" -> "hardware" and replace the MWS2019.iso with the virtio-win-x.x.xxx.iso
 open file browser and go to CD -> virtio... -> guest-agent -> qemu-ga-x86_64
-![[/app02-virtio-install.png]]
+![app02-virtio-install.png](/app02-virtio-install.png)
 then go back to the main folder and install "virtio-win-gt-x64" all defaults. 
 
 Then we can go back to hardware in proxmox and remove the virtIO drive.
@@ -440,7 +440,7 @@ in the shell on your primary node in proxmox
 wget http://192.168.0.202:8000/Metasploitable.vmdk
 
 ```
-![[/metasplotable2-upload.png]]
+![metasplotable2-upload.png](/metasplotable2-upload.png)
 now still in that shell run
 ```sh
 qm importdisk 113 Metasploitable.vmdk local-lvm -format qcow2
@@ -466,7 +466,7 @@ You can see that when you add it the Variables middle box updates to <a>learning
 we can save it in the Attack Scripts section in the top left.
 Settings is in the top right, are pretty self-explanatory. For more information go to the link above. 
 Now we fill it in. 
-![[/kali-auto.png]]
+![kali-auto.png](/kali-auto.png)
 STAGE sets a delay
 OS command in on our host system. 
 We first run nmap -sn {subnet}, then nmap -PS -sV {on both web01 and app01}, the dirb on web01, then hydra on app01 with user and password file, then ssh app01, then run [exploit](https://exploit-db.com/exploits/48506 ), then on the guest system cat /etc/passwd then exit. 
@@ -646,13 +646,13 @@ I am seeing that step 7 failed to connect, and it did not exit on its own proper
 
 ## Using ZAP 
 In your Kali-Purple box ZAP should be installed. 
-![[/zap-location.png]]
+![zap-location.png](/zap-location.png)
 Go to 03 - Web Application Analysis and on the right select 'zap'
 Use the default you do not need this to persist.
 Select the Automated Scan, Use our Metasploitable DVWA app, server mine is running at "192.168.0.30/dvwa" you can get the IP by logging in at the console and running `ip a` then start. If you are not familer with the tool on the top left has sites and this will list everything in folders and subfolders. Once it is completed we want to select the "Alerts" on the bar in the middle, and it will open in the bottom left. 
-![[/zap-scan.png]]
+![zap-scan.png](/zap-scan.png)
 Now lets look at the top alert.
-![[/zap-post.png]]
+![zap-post.png](/zap-post.png)
 When we click on the POST under Remote Code Execution we see the top right changes to the POST Header and Body and the bottom right changes to information about the CVE use that as the last octet and in that box if you scroll down it will tell what to do to fix it. 
 On the top Find Reports and select 'Generate a report' for a reference. 
 
@@ -666,7 +666,7 @@ sudo apt install gvm
 sudo gvm-setup
 ```
 Look save your admin password. You will need it later. Note: it is shown when it is generated and at the end of the setup.
-![[/gvm-adminXXXXX.png]]
+![gvm-adminXXXXX.png](/gvm-adminXXXXX.png)
 You should not need this, but I had an installation error.
 ```sh 
 ## I had some error
@@ -695,7 +695,7 @@ Then lets make a new user "Administration -> Users" on the top left the paper wi
 Chose name:password and Roles -> Admin and save.
 Next Go to Administration -> Feed Status. 
 Mine are updating this can take hours. We need to have this completed before we run a scan. 
-![[/FeedStatus.png]]
+![FeedStatus.png](/FeedStatus.png)
 once all are status is current we can run a scan.
 Go to "Scans" -> "Tasks" go to the wand in the top left and select "Task Wizard" put in our metasploitable2 IP min is "192.168.0.30" and scan. 
 When completed we can view by clicking it in latest reports. 
