@@ -60,7 +60,7 @@ sudo apt install vim tmux
 Change your IP to use that as the last octet as your VM's ID. I am thinking it is best for this to be on its own sub-net to avoid issues with other devices, but it will remove your ability to monitor your home network traffic if that is part of your goal as is mine. Also, I will most likely not use this VM's long term. I will use my Study VM on my main system for my attacks. 
 ### Our Defensive 
 #### Kali Purple
-[Kali Purple](https://www.kali.org/get-kali/#kali-installer-images)keep scrolling it is below Kali. I used the Recommended one. 
+[Kali Purple](https://www.kali.org/get-kali/#kali-installer-images) keep scrolling it is below Kali. I used the Recommended one. 
 The installation is the same with the changes mentioned below. 
 - Name it "purple" select the correct ISO. 
 - During install select all the defensive tools. 
@@ -75,6 +75,7 @@ For installing most things are the same you can name it template, and for softwa
 The same changes to the system as before, but you don't need to change the network setting that will be done later. 
 Once updates are complete shutdown the server and convert to a template by right-clicking it and "convert to template".
 ![Convert-to-template.png](/Convert-to-template.png)
+
 I did not think about numbering when I started my build. 
 Now we can clone form that template. 
 
@@ -119,6 +120,7 @@ I miss type this one the first time and had to fix it double-check that the quot
 Then run `sudo hostnamectl set-hostname web01` to change the host name to "web01" then reboot.
 Now change host name in /etc/hosts to web01
 ![web01-etc-hosts.png](/web01-etc-hosts.png)
+
 Now we will install Suricata on this server to reduces our total number of servers running. 
 
 ```sh
@@ -301,6 +303,7 @@ We now need to install a Proxmox Windows VirtIO [Drivers](https://pve.proxmox.co
 Once downloaded, upload into proxmox ISO folder and then go to "app02" -> "hardware" and replace the MWS2019.iso with the virtio-win-x.x.xxx.iso
 open file browser and go to CD -> virtio... -> guest-agent -> qemu-ga-x86_64
 ![app02-virtio-install.png](/app02-virtio-install.png)
+
 then go back to the main folder and install "virtio-win-gt-x64" all defaults. 
 
 Then we can go back to hardware in proxmox and remove the virtIO drive.
@@ -647,6 +650,7 @@ I am seeing that step 7 failed to connect, and it did not exit on its own proper
 ## Using ZAP 
 In your Kali-Purple box ZAP should be installed. 
 ![zap-location.png](/zap-location.png)
+
 Go to 03 - Web Application Analysis and on the right select 'zap'
 Use the default you do not need this to persist.
 Select the Automated Scan, Use our Metasploitable DVWA app, server mine is running at "192.168.0.30/dvwa" you can get the IP by logging in at the console and running `ip a` then start. If you are not familer with the tool on the top left has sites and this will list everything in folders and subfolders. Once it is completed we want to select the "Alerts" on the bar in the middle, and it will open in the bottom left. 
@@ -667,6 +671,7 @@ sudo gvm-setup
 ```
 Look save your admin password. You will need it later. Note: it is shown when it is generated and at the end of the setup.
 ![gvm-adminXXXXX.png](/gvm-adminXXXXX.png)
+
 You should not need this, but I had an installation error.
 ```sh 
 ## I had some error
