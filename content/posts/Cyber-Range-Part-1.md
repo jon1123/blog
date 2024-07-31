@@ -515,6 +515,8 @@ sudo adduser akhtar
 WildCat1010
 # all other fileds can be left blank
 ```
+*We will not be able to ssh in with this user, we forgot to enable that* 
+[*To enable ssh.*](https://linuxconfig.org/how-to-enable-and-disable-ssh-for-user-on-linux)
 
 Now back to our kali box. 
 ```sh
