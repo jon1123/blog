@@ -13,7 +13,7 @@ I plan on adding my wright-ups on the recommended boxes that accompany the modul
 
 Thank you.
 
- <img src="https://tryhackme-badges.s3.amazonaws.com/Jon112358.png" alt="TryHackMe">
+<script src="https://tryhackme.com/badge/30729"></script>
 
 # My Resume 
 
