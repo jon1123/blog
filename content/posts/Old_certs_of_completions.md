@@ -24,10 +24,10 @@ I was orginising my files and found this colection of TryHackMe, Udemy, NahmconC
 
 ![THM_AOC3](/certs/THM_AOC3-2021.png)
 
-![Udemy_Python](/certs/Udemy_Python_DA-V.fodg)
+![Udemy_Python](/certs/Udemy_Python_DA-V.png)
 
 I think this one had a test.
-![Splunck](/certs/Splunk-eLearning.odg)
+![Splunck](/certs/Splunk-eLearning.png)
 
 ![NahamconCTF2022](/certs/NahamCon2022_jmk112358.png)
 
@@ -35,6 +35,6 @@ I think this one had a test.
 
 ## Exam's
 
-![eJPT](/certs/eJPTCertification.odg)
+![eJPT](/certs/eJPTCertification.png)
 
 
