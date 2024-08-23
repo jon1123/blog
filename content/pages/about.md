@@ -15,6 +15,11 @@ Thank you.
 
 <script src="https://tryhackme.com/badge/30729"></script>
 
+My THM [Referral link](https://tryhackme.com/signup?referrer=5e7a658e53aed12624f2de87)
+
+My HTB Academy STUDENT ID: HTB-FE5393BFDE
+My HTB-Academy [Referral link](https://referral.hackthebox.com/mzwLTXe)
+
 # My Resume 
 
 ## *Jon Kuhl*

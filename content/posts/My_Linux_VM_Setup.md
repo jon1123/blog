@@ -8,7 +8,7 @@ draft: false
 
 Hello this is the post about the steps I am currently following to make a New Linux VM attack box.
 
-Most of this is from Hack The Box Academy - [Setting Up](https://academy.hackthebox.com/module/details/87). Some of this is from other sources or I added when I found I keep going back to a tool not on the list. I don't currently have my own Windows set up. 
+Most of this is from Hack The Box Academy - [Setting Up](https://academy.hackthebox.com/module/details/87). My HTB-Academy [Referral link](https://referral.hackthebox.com/mzwLTXe). Some of this is from other sources or I added when I found I keep going back to a tool not on the list. I don't currently have my own Windows set up. 
  
 ```bash
 sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y
