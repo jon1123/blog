@@ -77,10 +77,10 @@ gobuster dir -u http://$IP/ -w /usr/share/wordlists/dirbuster/directory-list-2.3
 ```
 
 
-![Fuel-CMS.png](/Fuel-CMS.png)
+![Fuel-CMS.png](/old/Fuel-CMS.png)
 
 also 
-![feul_admin.png](/feul_admin.png)
+![feul_admin.png](/old/feul_admin.png)
 
 This login worked
 There is a link to the documentation and we see
@@ -132,7 +132,7 @@ print(r)
 
 ```
 to use - from the GitHub link
-![how-to-use-attack.png](/how-to-use-attack.png)
+![how-to-use-attack.png](/old/how-to-use-attack.png)
 
 so run the script
 ```sh
@@ -188,7 +188,7 @@ python3 -m http.server
 ```
 It is running super slow -- the point I stopped it was over an hour of run time.
 While waiting looked back at the home page and noticed this.
-![privle-vect.png](/privle-vect.png)
+![privle-vect.png](/old/privle-vect.png)
 
 so lets chck it out
 ```sh

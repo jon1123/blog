@@ -37,7 +37,7 @@ ADMIN:ADMIN
 <snip>
 ``` 
 
-![tomcat password](/credds-jerry.png)
+![tomcat password](/old/credds-jerry.png)
 
 With a field login attempt with `admin:admin` with burp suite to get the formatting for hydra we got an 403 page with this information in it. So next tried `tomcat:s3cret` and logged in.
 

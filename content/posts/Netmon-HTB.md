@@ -145,7 +145,7 @@ looking inside 'PRTG Configuration.old.bak'
 note to self: in vim to [search](https://linuxize.com/post/vim-search/) use '/' and then type search pattern
 press 'n' for next and 'N' for previous, for words `/\<words\>`
 /db 
-![dbuser-dbpass.png](/dbuser-dbpass.png)
+![dbuser-dbpass.png](/old/dbuser-dbpass.png)
 
 this user and password will not work 
 It should have been obvious to me to try a variation of the password like 
@@ -154,7 +154,7 @@ so prtgadmin:PrTg@dmin2019
 ## Web Admin 
 
 so now that we are logged in we see the version information
-![PRTG-Version.png](/PRTG-Version.png)
+![PRTG-Version.png](/old/PRTG-Version.png)
 
 ```sh
 -[Wed Jul 17-15:32:47]-[jmk@parrot]-
@@ -180,7 +180,7 @@ Copied to: /home/jmk/Documents/Netmon/44500.py
 ```
 
 note: CVE-2018-10253
-![nist-cve-discription.png](/nist-cve-discription.png)
+![nist-cve-discription.png](/old/nist-cve-discription.png)
 
 I could not get 44500.py to work, so I kept looking and found out the by setting up a notification in the admin dashboard I could run psexec.py and get sysadmin. 
 

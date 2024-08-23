@@ -1,5 +1,5 @@
 ---
-title: "Old_certs_of_completions"
+title: "Certs as of now"
 date: 2024-08-23T12:25:43-07:00
 draft: false
 ---
