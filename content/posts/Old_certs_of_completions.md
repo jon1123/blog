@@ -24,12 +24,12 @@ I was orginising my files and found this colection of TryHackMe, Udemy, NahmconC
 
 ![THM_AOC3](/certs/THM_AOC3-2021.png)
 
-![Udemy_Python](/certs/Udemy_Python_DA-V.png)
+![Udemy_Python](/certs/Udemy_Python_DA-V.pdf)
 
 I think this one had a test.
-![Splunck](/certs/Splunk-eLearning.png)
+![Splunck](/certs/Splunk-eLearning.pdf)
 
-![NahamconCTF2022](/certs/NahamCon2022.png)
+![NahamconCTF2022](/certs/NahamCon2022_jmk112358.png)
 
 ![NahamconCTF2023](/certs/NahamconCTF2023.png)
 
