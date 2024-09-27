@@ -13,6 +13,8 @@ I plan on adding my wright-ups on the recommended boxes that accompany the modul
 
 Thank you.
 
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="60a23b0a-1de8-4d77-9c8b-020de55ad2dc" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
 <script src="https://tryhackme.com/badge/30729"></script>
 
 My THM [Referral link](https://tryhackme.com/signup?referrer=5e7a658e53aed12624f2de87)
