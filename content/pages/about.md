@@ -36,7 +36,7 @@ jonmkuhl@gmail.com
     • Bachelor of Science, Mathematics - Applied Mathematics Option California State Polytechnic University, Pomona Pomona, California
     
 ### CERTIFICATIONS and TRAININGS:
-    • CopTIA Security+ ce, EXP Date: 09/26/2027
+    • CompTIA Security+ ce, EXP Date: 09/26/2027
     • eJPT - Junior Penetration Tester (Cert ID: 8452393)
     • Hack The Box Academy: Bug Bounty Hunter, Operating System Fundamentals Paths completed
     • TryHackMe: CompTIA Pentest+, Complete Beginner, Pre Security Paths completed
