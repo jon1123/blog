@@ -1,7 +1,7 @@
 ---
 title: "BoardLight_HTB"
 date: 2024-09-09T19:06:13-07:00
-draft: true
+draft: fales
 ---
 
 My notes from this Hack the Box room. 
