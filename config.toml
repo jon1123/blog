@@ -75,6 +75,10 @@ url = "https://discord.gg/VzKZZunue3"
 name = "Security+"
 url = "https://www.credly.com/badges/60a23b0a-1de8-4d77-9c8b-020de55ad2dc/public_url"
 
+[caches]
+ [cashes.images]
+   dir = ':cacheDir/images'
+
 [tableOfContents]
 startLevel = 2 # ToC starts from H2
 endLevel = 4 # ToC ends at H4
