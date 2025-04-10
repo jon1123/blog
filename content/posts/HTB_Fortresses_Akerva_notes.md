@@ -3,7 +3,6 @@ title: "HTB_Fortresses_Akerva_notes"
 date: 2025-04-10T12:58:15-07:00
 draft: false 
 ---
-I plan to write a report soon and will post hear when complet. 
 
 # About Akerva
 ```

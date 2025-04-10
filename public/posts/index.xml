@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on jon112358 study Blog</title>
+    <link>http://jon112358.com/posts/</link>
+    <description>Recent content in Posts on jon112358 study Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Apr 2025 12:58:15 -0700</lastBuildDate><atom:link href="http://jon112358.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTB_Fortresses_Akerva_notes</title>
+      <link>http://jon112358.com/posts/htb_fortresses_akerva_notes/</link>
+      <pubDate>Thu, 10 Apr 2025 12:58:15 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/htb_fortresses_akerva_notes/</guid>
+      <description>I plan to write a report soon and will post hear when complet.
+About Akerva Pure player in cybersecurity with strong expertise (Technical Expertise, Audit and Pentest, Red Team operations, SSI Governance, E-learning, SOC ...), Akerva is an independent firm which today has around sixty employees. Our consultants and auditors are involved in high added value advisory and audit assignments on complex security issues. In strong growth, we are recruiting many consultants with a technical profile to integrate our audit team but also our SOC - Cyber ​​Defense Center.</description>
+    </item>
+    
+    <item>
+      <title>Resume 2025 01 04</title>
+      <link>http://jon112358.com/posts/resume-2025-01-04/</link>
+      <pubDate>Sat, 04 Jan 2025 18:04:56 -0800</pubDate>
+      
+      <guid>http://jon112358.com/posts/resume-2025-01-04/</guid>
+      <description>Jon Kuhl VancouAver, WA | 714-514-5534 | email: jonmkuhl@gmail.com | github: https://github.com/jon1123 LinkedIn: https://www.linkedin.com/in/jonmkuhl | Portfolio: https://jon112358.com
+Professional Summary Results-driven cybersecurity professional with hands-on experience in vulnerability assessments, technical auditing, IT systems management, and data analysis. Proficient in leveraging tools like Nmap, Burp Suite, Wireshark, OpenVAS, and Metasploit for vulnerability detection, testing, and analysis. A proactive learner committed to safeguarding digital assets through practical applications and ongoing education, utilizing a home lab environment and platforms such as HackTheBox and TryHackMe.</description>
+    </item>
+    
+    <item>
+      <title>BoardLight_HTB</title>
+      <link>http://jon112358.com/posts/boardlight_htb/</link>
+      <pubDate>Mon, 09 Sep 2024 19:06:13 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/boardlight_htb/</guid>
+      <description>My notes from this Hack the Box room.
+IP=10.10.11.11 ports=$(nmap -Pn -p- --min-rate=1000 -T4 $IP -oN nmap-p | grep ^[0-9] | cut -d &#39;/&#39; -f 1 | tr &#39;\n&#39; &#39;,&#39; | sed s/,$//) [Mon Sep 09-15:47:50]-[jmk@parrot]- -[~/Documents/BoardLight]$ $ports -bash: 22,80: command not found -[Mon Sep 09-15:48:07]-[jmk@parrot]- -[~/Documents/BoardLight]$ nmap -sCV -p$ports $IP -oN nmap-sCV Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-09 15:48 PDT Nmap scan report for 10.10.11.11 Host is up (0.</description>
+    </item>
+    
+    <item>
+      <title>Bad_USB</title>
+      <link>http://jon112358.com/posts/bad_usb/</link>
+      <pubDate>Thu, 05 Sep 2024 17:38:49 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/bad_usb/</guid>
+      <description>Bad USB A few years ago I wanted to play around with the Hak5 Rubber Ducky, but I could not justify to my wife the need for this ~$80 toy(at lest at the time) as she would see it. So I looked around for a bit and around that time on YouTube &amp;ldquo;The Cyber Mentor&amp;rdquo; posted this video on a $2 Rubber Ducky(I think they are closer to $4 now). This cost has many advantages.</description>
+    </item>
+    
+    <item>
+      <title>My_Linux_VM_Setup</title>
+      <link>http://jon112358.com/posts/my_linux_vm_setup/</link>
+      <pubDate>Fri, 23 Aug 2024 16:09:04 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/my_linux_vm_setup/</guid>
+      <description>Setting up an environment, on Linux Hello this is the post about the steps I am currently following to make a New Linux VM attack box.
+Most of this is from Hack The Box Academy - Setting Up. My HTB-Academy Referral link. Some of this is from other sources or I added when I found I keep going back to a tool not on the list. I don&amp;rsquo;t currently have my own Windows set up.</description>
+    </item>
+    
+    <item>
+      <title>Certs as of now</title>
+      <link>http://jon112358.com/posts/old_certs_of_completions/</link>
+      <pubDate>Fri, 23 Aug 2024 12:25:43 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/old_certs_of_completions/</guid>
+      <description>Certificates mostly of completion I was orginising my files and found this colection of TryHackMe, Udemy, NahmconCTF, and eLearning Certifications and wanted to put them all in the same place.
+Completion I think this one had a test. Exam&amp;rsquo;s </description>
+    </item>
+    
+    <item>
+      <title>Iginite THM</title>
+      <link>http://jon112358.com/posts/iginite-thm/</link>
+      <pubDate>Thu, 01 Aug 2024 17:33:57 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/iginite-thm/</guid>
+      <description>IP=10.10.179.198
+ports=$(nmap -Pn -p- --min-rate=1000 -T4 $IP -oN nmap-p | grep ^[0-9] | cut -d &amp;#39;/&amp;#39; -f 1 | tr &amp;#39;\n&amp;#39; &amp;#39;,&amp;#39; | sed s/,$//) PORT STATE SERVICE 80/tcp open http nmap -sCV -p$ports $IP -oN nmap-sCV PORT STATE SERVICE VERSION 80/tcp open http Apache httpd 2.4.18 ((Ubuntu)) | http-robots.txt: 1 disallowed entry |_/fuel/ |_http-title: Welcome to FUEL CMS |_http-server-header: Apache/2.4.18 (Ubuntu) -[Thu Aug 01-15:40:51]-[jmk@parrot]- -[~/Documents/Ignute-THM]$ searchsploit Apache 2.4.18 ------------------------------------------------------------- --------------------------------- Exploit Title | Path ------------------------------------------------------------- --------------------------------- Apache + PHP &amp;lt; 5.</description>
+    </item>
+    
+    <item>
+      <title>Cyber Range Part 1</title>
+      <link>http://jon112358.com/posts/cyber-range-part-1/</link>
+      <pubDate>Mon, 29 Jul 2024 17:04:03 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/cyber-range-part-1/</guid>
+      <description>Building A Home Cyber Range with Proxmox Introduction In an effort to ever expand my knowledge and understanding of a live environment. I am transitions my Proxmox server from running random docker containers and VM&amp;rsquo;s to a simulated network. I was sure where to begin and saw a LinkedIn Learning class on Kali Purple from Malcolm Shore. It is more about building a cyber range with Proxmox. I think this will be a good start, so this is my attempt to work out hist 4+ hours of video and explanation.</description>
+    </item>
+    
+    <item>
+      <title>Blue HTB</title>
+      <link>http://jon112358.com/posts/blue-htb/</link>
+      <pubDate>Wed, 17 Jul 2024 17:41:04 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/blue-htb/</guid>
+      <description>Summery This box is an MS17-010-EternalBlue box. Recorded with CVE-2017-0144 and a CSVV V3.x Base Score of 8.1 High. I will run the Metasploit module.
+Blue IP=10.10.10.40
+ports=$(nmap -Pn -p- --min-rate=1000 -T4 $IP -oN nmap-p | grep ^[0-9] | cut -d &#39;/&#39; -f 1 | tr &#39;\n&#39; &#39;,&#39; | sed s/,$//)
+cat nmap-p # Nmap 7.94SVN scan initiated Wed Jul 17 17:09:38 2024 as: nmap -Pn -p- --min-rate=1000 -T4 -oN nmap-p 10.</description>
+    </item>
+    
+    <item>
+      <title>Netmon HTB</title>
+      <link>http://jon112358.com/posts/netmon-htb/</link>
+      <pubDate>Wed, 17 Jul 2024 16:51:04 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/netmon-htb/</guid>
+      <description>Summary In this box we find and FTP server with Anonymous FTP login allowed. This will lead us to the credentials for admin access to an Paessler PRTG bandwidth monitor with the version PRTG/18.1.37.13946 found by nmap and later confirmed by the admin panel. This we find to be vulnerable CVE-2018-10253 with a CVSS 3.x score of 7.5 High. This will lead to the exploit that will get us &amp;ldquo;nt authoruty\system&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Jerry HTB</title>
+      <link>http://jon112358.com/posts/jerry-htb/</link>
+      <pubDate>Tue, 16 Jul 2024 16:38:48 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/jerry-htb/</guid>
+      <description>This is a test post I want to explore how some things translate fom my Obsidian volt with minamal edits.
+IP=10.10.10.95 nmap -Pn -p- -oN nmap-p $IP --min-rate=1000 PORT STATE SERVICE 8080/tcp open http-proxy nmap -Pn -p 8080 -sCV -v -oN nmap-sCV $IP PORT STATE SERVICE VERSION 8080/tcp open http Apache Tomcat/Coyote JSP engine 1.1 | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache-Coyote/1.1 |_http-title: Apache Tomcat/7.0.88 |_http-favicon: Apache Tomcat Getting possible default passwords with</description>
+    </item>
+    
+    <item>
+      <title>Connect Website to DB With Php</title>
+      <link>http://jon112358.com/posts/connect-website-to-db-with-php/</link>
+      <pubDate>Wed, 26 Jul 2023 14:57:44 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/connect-website-to-db-with-php/</guid>
+      <description>Why For the HackTheBox(HTB) Academy class I am working &amp;ldquo;Bug Bounty Hunter&amp;rdquo; at the end of the second module they gave the following assignment and I was following a how to make a forum tutorial and got found struggled to connect to the database. This project may not be finished now but I plan to work on the CSS and JavaScrip parts later. For now I am going to do a much simpler website that will be self hosted so that I can do the testing I want for part 8 and 9 in the below list but I want to share what I have been working on the past few weeks.</description>
+    </item>
+    
+    <item>
+      <title>Nahamcon CTF 2023</title>
+      <link>http://jon112358.com/posts/nahamcon-ctf-2023/</link>
+      <pubDate>Sat, 17 Jun 2023 12:25:43 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/nahamcon-ctf-2023/</guid>
+      <description>Nahamcon CTF 2023 I was the only one on my team. Read the rules a link to the rules and found in view-scorce
+line 273 flag{90bc54705794a62015369fd8e86e557b}
+Rules We don&amp;rsquo;t want to have to enforce restrictions on you, but there are a few things we would like to politely ask you not to do:
+Please do not attack the competition infrastructure or other players. The challenges are your targets. That&amp;rsquo;s it. You do not need to use automated scanners like sqlmap, DirBuster, nmap, Metasploit, nikto or others.</description>
+    </item>
+    
+    <item>
+      <title>THM Protocols and Services</title>
+      <link>http://jon112358.com/posts/thm-protocals-and-services/</link>
+      <pubDate>Fri, 02 Jun 2023 15:02:53 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/thm-protocals-and-services/</guid>
+      <description>This is a THM room that i worked on last year50
+Protocols and Servers Summary of some of the the most common attacked Protocols
+Protocol TCP Port Application(s) Data Security FTP 21 File Transfer Cleartext HTTP 80 Worldwide Web Cleartext IMAP 143 Email (MDA) Cleartext POP3 110 Email (MDA) Cleartext SMTP 25 Email (MTA) Cleartext Telnet 23 Remote Access Cleartext from THM [https://tryhackme.com/room/protocolsandservers]
+Tools Sniffing Attacks
+Tcpdump Wireshark Tshark Man in the middle (MITM) Attack</description>
+    </item>
+    
+    <item>
+      <title>HTB Base</title>
+      <link>http://jon112358.com/posts/htb-base/</link>
+      <pubDate>Tue, 30 May 2023 16:32:14 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/htb-base/</guid>
+      <description>Base by HTB - Starting Point 2 IP=10.129.95.184 MyIP=10.10.15.79
+nmap nmap -sCV -oN nmap-CV.txt $IP PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 f65c9b38eca75c791c1f181c5246f70b (RSA) | 256 650cf7db42034607f21289fe11202c53 (ECDSA) |_ 256 b865cd3f34d8026ae318233e77dd8740 (ED25519) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-title: Welcome to Base |_http-server-header: Apache/2.4.29 (Ubuntu) Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+nmap -p- -T5 $IP PORT STATE SERVICE 22/tcp open ssh 80/tcp open http</description>
+    </item>
+    
+    <item>
+      <title>HTB MarkUp</title>
+      <link>http://jon112358.com/posts/htb-markup/</link>
+      <pubDate>Fri, 19 May 2023 17:17:12 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/htb-markup/</guid>
+      <description>MarkUp For this box I am following the provided wirghtup
+IP=10.129.23.18
+myIP=10.10.15.113
+nmap scans nmap -sCV $IP -oN nmap-markup.txt PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH for_Windows_8.1 (protocol 2.0) | ssh-hostkey: | 3072 9fa0f78cc6e2a4bd718768823e5db79f (RSA) | 256 907d96a96e9e4d4094e7bb55ebb30b97 (ECDSA) |_ 256 f910eb76d46d4f3e17f393d60b8c4b81 (ED25519) 80/tcp open http Apache httpd 2.4.41 ((Win64) OpenSSL/1.1.1c PHP/7.2.28) |_http-server-header: Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.2.28 |http-title: MegaShopping | http-cookie-flags: | /: | PHPSESSID: | httponly flag not set 443/tcp open ssl/http Apache httpd 2.</description>
+    </item>
+    
+    <item>
+      <title>THM Linux Privilege Escalation</title>
+      <link>http://jon112358.com/posts/linux-privilege-escalation/</link>
+      <pubDate>Tue, 09 May 2023 16:20:43 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/linux-privilege-escalation/</guid>
+      <description>THM Linux Privilege Escalation Task 1 Introduction Privilege escalation is a journey. There are no silver bullets, and much depends on the specific configuration of the target system. The kernel version, installed applications, supported programming languages, other users&amp;rsquo; passwords are a few key elements that will affect your road to the root shell.
+This room was designed to cover the main privilege escalation vectors and give you a better understanding of the process.</description>
+    </item>
+    
+    <item>
+      <title>THM Windows Privilege Escalation</title>
+      <link>http://jon112358.com/posts/windows-privlage-esclation/</link>
+      <pubDate>Tue, 09 May 2023 16:19:24 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/windows-privlage-esclation/</guid>
+      <description>THM Windows Privilege Escalation Simply put, privilege escalation consists of using given access to a host with &amp;ldquo;user A&amp;rdquo; and leveraging it to gain access to &amp;ldquo;user B&amp;rdquo; by abusing a weakness in the target system. While we will usually want &amp;ldquo;user B&amp;rdquo; to have administrative rights, there might be situations where we&amp;rsquo;ll need to escalate into other unprivileged accounts before actually getting administrative privileges.
+Gaining access to different accounts can be as simple as finding credentials in text files or spreadsheets left unsecured by some careless user, but that won&amp;rsquo;t always be the case.</description>
+    </item>
+    
+    <item>
+      <title>THM Wireshark 101</title>
+      <link>http://jon112358.com/posts/wireshark101/</link>
+      <pubDate>Tue, 09 May 2023 16:18:11 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/wireshark101/</guid>
+      <description>THM Wireshark 101 Task 1 Introduction Wireshark, a tool used for creating and analyzing PCAPs (network packet capture files), is commonly used as one of the best packet analysis tools. In this room, we will look at the basics of installing Wireshark and using it to perform basic packet analysis and take a deep look at each common networking protocol.
+PCAPs used in this room have been sourced from the Wireshark Sample Captures Page as well as captures from various members of the TryHackMe community.</description>
+    </item>
+    
+    <item>
+      <title>THM Mr Robot</title>
+      <link>http://jon112358.com/posts/thm-mr-robot/</link>
+      <pubDate>Tue, 09 May 2023 12:41:18 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/thm-mr-robot/</guid>
+      <description>THM - Mr. Robot Task 1 Connect to our network
+To deploy the Mr. Robot virtual machine, you will first need to connect to our network.
+Answer the questions below
+Connect to our network using OpenVPN. Here is a mini walkthrough of connecting:
+Go to your access page and download your configuration file.
+Use an OpenVPN client to connect. In my example I am on Linux, on the access page we have a windows tutorial.</description>
+    </item>
+    
+    <item>
+      <title>THM The Lay of the land</title>
+      <link>http://jon112358.com/posts/the-lay-of-the-land/</link>
+      <pubDate>Tue, 09 May 2023 12:38:36 -0700</pubDate>
+      
+      <guid>http://jon112358.com/posts/the-lay-of-the-land/</guid>
+      <description>THM - The Lay of the land Learn about and get hands-on with common technologies and security products used in corporate environments; both host and network-based security solutions are covered.
+100%
+Task 1 Introduction
+It is essential to be familiar with the environment where you have initial access to a compromised machine during a red team engagement. Therefore, performing reconnaissance and enumeration is a significant part, and the primary goal is to gather as much information as possible to be used in the next stage.</description>
+    </item>
+    
+  </channel>
+</rss>

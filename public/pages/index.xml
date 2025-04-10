@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on jon112358 study Blog</title>
+    <link>http://jon112358.com/pages/</link>
+    <description>Recent content in Pages on jon112358 study Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Jul 2024 13:55:50 -0700</lastBuildDate><atom:link href="http://jon112358.com/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://jon112358.com/pages/about/</link>
+      <pubDate>Tue, 16 Jul 2024 13:55:50 -0700</pubDate>
+      
+      <guid>http://jon112358.com/pages/about/</guid>
+      <description>This is my study blog Hello I am Jon Kuhl
+I have been studding IT and Penetration testing for the last few of years and am looking for work in that field. I took and passed the eJPT in 2022. and I am currently working on HTB Academy. I plan on adding my wright-ups on the recommended boxes that accompany the modules I am working on or recently finished. As well as some TryHackMe.</description>
+    </item>
+    
+  </channel>
+</rss>
