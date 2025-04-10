@@ -111,7 +111,7 @@ img.emoji {
 <!-- Hello folks! -->
 <!-- This machine is powered by @lydericlefebvre from Akerva company. -->
 <!-- You have to find 8 flags on this machine. Have a nice root! -->
-<!-- By the way, the first flag is: AKERVA{Ikn0w_F0rgoTTEN#CoMmeNts} -->
+<!-- By the way, the first flag is: AKERVA{Ikn...eNts} -->
 
 						<p class="site-description">by @lydericlefebvre &amp; @akerva_fr</p>
 										<button class="secondary-toggle">Menu and widgets</button>
@@ -421,7 +421,7 @@ Content-Type: text/html; charset=UTF-8
 ##### enum
 ```sh
 [Fri Mar 14-12:20:36]-[jmk@parrot]-
--[~/Documents/Labs/Akerva]$ wpscan --url $IP --enumerate --api-token 5C0AfRoSs10Nq7qUODGpUMCThaGOhhHPUv9e8isO5aI
+-[~/Documents/Labs/Akerva]$ wpscan --url $IP --enumerate --api-token 5C0AfR...sO5aI
 _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
@@ -969,7 +969,7 @@ Interesting Finding(s):
 ##### ap 
 ```sh
 [Fri Mar 14-12:21:49]-[jmk@parrot]-
--[~/Documents/Labs/Akerva]$ wpscan --url $IP -e ap --api-token 5C0AfRoSs10Nq7qUODGpUMCThaGOhhHPUv9e8isO5aI
+-[~/Documents/Labs/Akerva]$ wpscan --url $IP -e ap --api-token 5C0A...5aI
 _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
@@ -1480,7 +1480,7 @@ Interesting Finding(s):
 ```sh
 [+] Elapsed time: 00:00:07
 -[Fri Mar 14-12:37:16]-[jmk@parrot]-
--[~/Documents/Labs/Akerva]$ wpscan --url $IP -e u --api-token 5C0AfRoSs10Nq7qUODGpUMCThaGOhhHPUv9e8isO5aI
+-[~/Documents/Labs/Akerva]$ wpscan --url $IP -e u --api-token 5C0Af...5aI
 _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
@@ -2047,7 +2047,7 @@ Index               Name
 646                 xauth-1:1.0.10-1
 
 <snip>                                 /bin/bash           /opt/check_backup.sh
-1238                runnable            backup_every_17     /bin/bash           /var/www/html/scripts/backup_every_17minutes.sh AKERVA{IkN0w_SnMP@@@MIsconfigur@T!onS}
+1238                runnable            backup_every_17     /bin/bash           /var/www/html/scripts/backup_every_17minutes.sh AKERVA{IkN0...nS}
 1245                runnable            uuidd               /usr/sbin/uuidd     --socket-activation
                                         
 12787               runnable            apache2             /usr/sbin/apache2   -k start      
@@ -2067,7 +2067,7 @@ Index               Name
 # This script performs backups of production and development websites.
 # Backups are done every 17 minutes.
 #
-# AKERVA{IKNoW###VeRbTamper!nG_==}
+# AKERVA{IKN..._==}
 #
 
 SAVE_DIR=/var/www/html/backups
@@ -2182,7 +2182,7 @@ app = Flask(__name__)
 auth = HTTPBasicAuth()
 
 users = {
-        "aas": generate_password_hash("AKERVA{1kn0w_H0w_TO_$Cr1p_T_$$$$$$$$}")
+        "aas": generate_password_hash("AKERVA{1kn...$$}")
         }
 
 @auth.verify_password
@@ -2224,7 +2224,7 @@ if __name__ == '__main__':
 lets try the 
 ```sh           space_dev.py
 users = {
-        "aas": generate_password_hash("AKERVA{1kn0w_H0w_TO_$Cr1p_T_$$$$$$$$}")
+        "aas": generate_password_hash("AKERVA{1kn0...$}")
         }
 
 ```
@@ -2273,12 +2273,12 @@ Content-Length: 21
 Server: Werkzeug/0.16.0 Python/2.7.15+
 Date: Wed, 19 Mar 2025 00:10:35 GMT
 
-AKERVA{IKNOW#LFi_@_}
+AKERVA{IK..._}
 
 ```
 
 ```sh
-AKERVA{IKNOW#LFi_@_}
+AKERVA{I..._}
 ```
 # Say Friend and Enter
 link on how to [exploit console](https://www.daehee.com/werkzeug-console-pin-exploit/)
@@ -2467,7 +2467,7 @@ drwxr-xr-x 3 root root 4096 Feb  9  2020 ..
 dr-xr-x--- 2 aas  aas  4096 Feb 10  2020 .ssh
 $ cat .hiddenflag.txt
 cat .hiddenflag.txt
-AKERVA{IkNOW#=ByPassWerkZeugPinC0de!}
+AKERVA{Ik...de!}
 
 ```
 # Super Mushroom
@@ -2498,7 +2498,7 @@ then `chmod +x sudo_exploit` then run it
 ```sh
 root@Leakage:/root# cat flag.txt
 cat flag.txt
-AKERVA{IkNow_Sud0_sUckS!}
+AKERVA{IkN...ckS!}
 
 ```
 # Little Secret
@@ -2523,21 +2523,21 @@ WELL DONE FOR SOLVING THIS CHALLENGE YOU CAN SEND YOUR RESUME HERE AT RECRUTEMEN
 ` IP=10.13.37.11 `
 
 #### Flag 1 
-`AKERVA{Ikn0w_F0rgoTTEN#CoMmeNts}`
+`AKERVA{Ikn...Nts}`
 #### Flag 2
-`AKERVA{IkN0w_SnMP@@@MIsconfigur@T!onS}`
+`AKERVA{IkN...onS}`
 #### Flag 3
-`AKERVA{IKNoW###VeRbTamper!nG_==}`
+`AKERVA{IKNo..._==}`
 #### Flag 4
-`AKERVA{1kn0w_H0w_TO_$Cr1p_T_$$$$$$$$}`
+`AKERVA{1kn...$$$}`
 #### Flag 5
-`AKERVA{IKNOW#LFi_@_}`
+`AKERVA{IKN..._}`
 #### Flag 6
-`AKERVA{IkNOW#=ByPassWerkZeugPinC0de!}`
+`AKERVA{IkN...de!}`
 #### Flag 7
-`AKERVA{IkNow_Sud0_sUckS!}`
+`AKERVA{IkN...kS!}`
 #### Flag 8
-`AKERVA{IKNOOOWVIGEEENERRRE}`
+`AKERVA{IKN...RE}`
 
 #### Notes
 
@@ -2594,7 +2594,7 @@ User=aas
 
 snmp_enum
 ```sh
-/var/www/html/scripts/backup_every_17minutes.sh AKERVA{IkN0w_SnMP@@@MIsconfigur@T!onS}
+/var/www/html/scripts/backup_every_17minutes.sh AKERVA{IkN...onS}
 ```
 
 scrip found 
@@ -2605,7 +2605,7 @@ scrip found
 # This script performs backups of production and development websites.
 # Backups are done every 17 minutes.
 #
-# AKERVA{IKNoW###VeRbTamper!nG_==}
+# AKERVA{IKNo...==}
 #
 
 SAVE_DIR=/var/www/html/backups
@@ -2626,7 +2626,7 @@ done
 from /dev/space_dev.py
 ```sh
 users = {
-        "aas": generate_password_hash("AKERVA{1kn0w_H0w_TO_$Cr1p_T_$$$$$$$$}")
+        "aas": generate_password_hash("AKERVA{1kn...$}")
         }
 ```
 
