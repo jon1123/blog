@@ -8,8 +8,8 @@ date: 2024-07-16T13:55:50-07:00
 
 Hello I am Jon Kuhl
 
-I have been studding IT and Penetration testing for the last few of years and am looking for work in that field. I took and passed the eJPT in 2022. and I am currently working on HTB Academy.
-I plan on adding my wright-ups on the recommended boxes that accompany the modules I am working on or recently finished. As well as some TryHackMe.com and other CTF's and some home-lab projects.
+I have been studding IT and cybersecurity for the last few of years and am looking for work in that field. I took and passed the eJPT in 2022. and I am currently working on HTB Academy Penetration Tester Path.
+I plan on adding my wright-ups on the recommended boxes that accompany the modules I am working on or recently finished. As well as some other CTF's and some home-lab projects.
 
 Thank you.
 
@@ -17,8 +17,6 @@ Thank you.
 
 
 <script src="https://tryhackme.com/badge/30729"></script>
-
-My THM [Referral link](https://tryhackme.com/signup?referrer=5e7a658e53aed12624f2de87)
 
 My HTB Academy STUDENT ID: HTB-FE5393BFDE
 My HTB-Academy [Referral link](https://referral.hackthebox.com/mzwLTXe)
@@ -30,28 +28,40 @@ jonmkuhl@gmail.com
 
 
 ### SUMMARY:
-    Experienced IT professional with a robust background in technical auditing, cybersecurity, and IT management. Proficient in various cybersecurity tools and practices with hands-on experience from platforms like HackTheBox Academy and TryHackMe. Adept at identifying and mitigating security threats, performing thorough security assessments, and enhancing organizational security posture.
+    Adaptive and self-driven cybersecurity professional with experience spanning system management,
+penetration testing, and independent technical support. Successfully delivered client solutions ranging
+from hardware repair and antivirus setup to nonprofit network upgrades, while advancing skills through
+personal labs, certifications, and training paths like eJPT and Hack The Box Academy. CompTIA
+Security+ ce
 
 ### EDUCATION:
     • Bachelor of Science, Mathematics - Applied Mathematics Option California State Polytechnic University, Pomona Pomona, California
     
 ### CERTIFICATIONS and TRAININGS:
-    • CompTIA Security+ ce, EXP Date: 09/26/2027
-    • eJPT - Junior Penetration Tester (Cert ID: 8452393)
-    • Hack The Box Academy: Bug Bounty Hunter, Operating System Fundamentals Paths completed
-    • TryHackMe: CompTIA Pentest+, Complete Beginner, Pre Security Paths completed
-    • Udemy: SQL, Python 3.x, Python for Data Science and Visualization, Linux Terminal
-    • Coursera: Applied Machine Learning in Python, Introduction to Data Science in Python, Applied Plotting, Charting and Data Representation in Python
-    • eLearnSecurity: Penetration Testing Student, Splunk
+    • CompTIA Security+ (SY0-701) – Valid through 09/27/2027
+    • eJPT (eLearnSecurity Junior Penetration Tester) (Cert ID: 8452393)
+    • Hack The Box Academy – Completed Information Security Foundations, Bug Bounty Hunter, and SOC Analyst Prerequisites paths; currently working on AI Red Teamer and Penetration Tester paths.
+    • Hack The Box Labs – Completed machines, challenges, and Sherlocks; Rank: Hacker (app.hackthebox.com/profile/1068091)
+    • TryHackMe – Completed Jr Penetration Tester, CompTIA Pentest+, Web Fundamentals, Introduction to Cyber Security, and Pre Security (https://tryhackme.com/p/Jon112358)
+    • Forage – Cybersecurity simulations for MasterCard (Phishing Email) and Telstra (SOC Alerts)
+    • Udemy – Python for Data Science, Linux Terminal, and SQL
+    • Coursera – Applied Machine Learning in Python and Introduction to Data Science in Python
+    • eLearnSecurity – Penetration Testing Student, Splunk
  
 ### TECHNICAL SKILLS:
-    • Cybersecurity Tools: Nmap, Netcat, Fping, Hydra, Wireshark, BurpSuite, ZAP, John the Ripper, Metasploit, Hashcat, Gobuster, Ffuf, SQLmap
-    • Systems: Proxmox, TrueNAS Scale, Windows Server 2012, MacOS, various GNU/Linux distributions (mostly Debian-based)
-    • Programming and Scripting: Python3, SQL, Bash
-    • Other: Active Directory, web-crawlers, data analysis 
+    • Security & Scanning Tools: Nmap, Burp Suite, Metasploit, Hydra, John the Ripper, Hashcat, SQLmap, Gobuster, Ffuf, Nikto, ZAP, OpenVAS, Nessus, tcpdump, Wireshark, Wazuh
+• Operating Systems & Virtualization: Windows, Windows Server, Linux, macOS, Proxmox, WSL2, VirtualBox
+• Scripting & Programming: Python3, SQL, Bash
     
       
 ### PROFESSIONAL EXPERIENCE:
+##### Independent IT Technician / Family Caregiver
+    January 2022 – Present
+    • Initially provided part-time care for a family member; later transitioned to freelance tech support and small-scale IT projects
+    • Performed hardware upgrades, system transfers, antivirus installs, and one-on-one training for clients
+    • Upgraded a nonprofit network from a single home router to a multi-access-point Ubiquiti system with structured cabling and configured devices
+    • Continued studying cybersecurity and hands-on penetration testing via Hack The Box, TryHackMe, and eJPT certification track
+
 ##### HP Printing (Contractor)
 ###### Data Analyst/Web Content Auditor
     April 2019 - October 2022
