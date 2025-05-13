@@ -80,15 +80,5 @@ Security+ ce
     • Managed and troubleshot hardware and software across various operating systems.
     • Collaborated with external contractors to upgrade hardware and software including a migration to Rackspace with Active Directory implementation.
 
-### ADDITIONAL EXPERIENCE:
-##### Family Caregiver
-    October 2022 - Present
-    • Adjusted professional commitments to provide necessary care for a family member transitioning from full-time to part-time caregiving as their condition stabilized.
-    • Managed household responsibilities, coordinated transportation for medical appointments, and provided ongoing emotional support.
-    • Utilized this period to further my education in Cybersecurity through platforms like HackTheBox Academy and TryHackMe, staying current with industry trends and enhancing my technical skills.
-
-### ADDITIONAL INFORMATION:
-    • Currently, advancing Cybersecurity skills through practical labs and challenges on HackTheBox Academy, PortSwigger Academy, hackinghub.io, and CyberRanges.com.
-    • Maintains a homelab environment utilizing Proxmox to build a home cyber range for continuous learning and experimentation.
 
 
