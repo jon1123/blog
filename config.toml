@@ -28,6 +28,11 @@ theme = "hugo-blog-awesome"
     name = 'About'
     url = '/about/'
     weight = 30
+  [[menu.main]]
+    pageRef ="Resume"
+    name = 'Resume'
+    url = '/Resume/'
+    weight = 40
 
 [params]
   sitename = "Jon K study blog"
