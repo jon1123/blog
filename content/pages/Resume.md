@@ -14,12 +14,14 @@ California State Polytechnic University, Pomona
 
 ## Freelance – Cybersecurity and IT Technician
 **November 2022 – Present**
+
     • Delivered hands-on hardware repairs, OS imaging, Security setup, and one-on-one training for residential and nonprofit clients.
     • Created and implemented a network solution for a nonprofit that enabled a multi–access point Ubiquiti system with structured cabling and device configuration.
     • Performed external IP scans, identified exposed security risks, and guided clients through remediation steps to minimize attack surface. Implemented Security Solution on Linux systems and configured Tailscale VPN for secure remote access to a home server.
     
 ## Contractor – Data Analyst/Web Content Auditor
 **April 2019 – October 2022**
+
 Contract held by 2020 Companies July 2020 – October 2022, Mosaic July 2019 – June
 2020, Marketsource April 2019 – June 2019
     • Audited and analyzed website data for accuracy and compliance. Created data-driven reports in Excel and PowerPoint to improve operational efficiency. 
@@ -27,11 +29,13 @@ Contract held by 2020 Companies July 2020 – October 2022, Mosaic July 2019 –
     
 ## FedEx Ground – Operations Administrator II
 **September 2017 – April 2019**
+
     • Maintained package tracking and logistics reporting  in a fast-paced operation environment.
     • Loaded vehicles for outbound delivery. 
     
 ## Lonestar Restaurant Supply – IT Manager/System Administrator
 **October 2015 – June 2017**
+
     • Eliminated $5K/month in costs by building in-house IT support; managed infrastructure, Nexus VoIP, and security systems across 5 locations. Implemented uniCenta POS.
     • Migrated on-prem services to Rackspace cloud, improving system reliability and reducing downtime. 
 
