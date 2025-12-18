@@ -35,7 +35,7 @@ theme = "hugo-blog-awesome"
     weight = 40
 
 [params]
-  sitename = "Jon K study blog"
+  sitename = "Jon K blog"
   defaultColor = "dark" # set color mode: dark, light, auto
   # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
   # the default value is set to 'auto'.
@@ -48,7 +48,7 @@ theme = "hugo-blog-awesome"
 [params.author]
   avatar = "avitar.jpg" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
-  intro = "My study blog"
+  intro = "My blog"
   name = "Jon K"
   description = "A quick look at what I have been up to."
 
