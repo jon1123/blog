@@ -21,9 +21,9 @@ California State Polytechnic University, Pomona
     
 ## Contractor – Data Analyst/Web Content Auditor
 **April 2019 – October 2022**
-
 Contract held by 2020 Companies July 2020 – October 2022, Mosaic July 2019 – June
 2020, Marketsource April 2019 – June 2019
+
     • Audited and analyzed website data for accuracy and compliance. Created data-driven reports in Excel and PowerPoint to improve operational efficiency. 
     • Troubleshooted web-crawler data collection systems to improve automated reporting for HP Printing.
     
