@@ -61,20 +61,12 @@ name = "LinkedIn"
 url = "https://www.linkedin.com/in/jonmkuhl/"
 
 [[params.socialIcons]]
-name = "tryhackme"
-url = "https://tryhackme.com/p/Jon112358"
-
-[[params.socialIcons]]
 name = "HackTheBox"
-url = "https://app.hackthebox.com/profile/1068091"
+url = "https://profile.hackthebox.com/profile/019e5126-20a1-7174-821a-7dd893833182"
 
 [[params.socialIcons]]
 name = "eJPT"
 url = "https://verified.elearnsecurity.com/certificates/6da8bdbd-63c2-4fa6-8722-ab75a9668fcb"
-
-[[params.socialIcons]]
-name = "Discord"
-url = "https://discord.gg/VzKZZunue3"
 
 [[params.socialIcons]]
 name = "Security+"
